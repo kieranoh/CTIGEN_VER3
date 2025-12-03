@@ -1,0 +1,16 @@
+FUN_1400030e0
+FUN_140003d40
+FUN_1400049c0
+__wcsnicmp_ascii
+FUN_14000c310
+FUN_14000c720
+__uncaught_exception
+FUN_14000d328
+__acrt_errno_from_os_error
+_expandlocale
+_wcstombs_l_helper
+__acrt_locale_release_lc_time_reference
+__acrt_get_qualified_locale_downlevel
+FUN_14001d1f0
+FUN_14001d318
+FUN_14001f950
