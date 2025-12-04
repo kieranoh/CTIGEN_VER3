@@ -1,0 +1,16 @@
+FUN_1400022dd
+FUN_14000234d
+_guard_check_icall
+FUN_140007740
+FUN_140007920
+DeleteCriticalSection
+EnterCriticalSection
+LeaveCriticalSection
+FUN_14000b680
+thunk_FUN_140007740
+FUN_14000b974
+FUN_14000b98c
+FUN_14000e8d0
+FUN_14000e8e0
+Catch_14001fad8
+Catch_All_14001fe10

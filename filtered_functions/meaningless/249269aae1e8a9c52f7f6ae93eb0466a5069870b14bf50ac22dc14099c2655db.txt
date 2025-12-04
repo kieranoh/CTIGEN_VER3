@@ -1,0 +1,13 @@
+CWinApp
+operator_delete
+AfxEnableControlContainer
+CDialog
+DDX_Control
+CString
+CWnd
+GetWindowTextA
+SetWindowTextA
+Format
+__dllonexit
+_initterm
+FUN_004037a5
