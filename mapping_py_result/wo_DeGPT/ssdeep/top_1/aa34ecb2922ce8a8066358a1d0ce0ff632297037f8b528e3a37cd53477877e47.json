@@ -1,0 +1,1085 @@
+{
+  "FUN_100013a0_1": [],
+  "FUN_100013b0_1": [],
+  "FUN_100013e0_1": [],
+  "FUN_10001450_1": [],
+  "RegisterModule_1": [],
+  "FUN_100017a0_1": [
+    {
+      "ATT&CK ID": "T1497.003",
+      "Indicator": "Contains ability to retrieve the time elapsed since the system was started (API string): Found reference to API \"GetTickCount\" (Indicator: \"GetTickCount\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetTickCount\" (Indicator: \"GetTickCount\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by manipulating the thread-local storage using the `FS` segment register, which is a common technique for managing thread-specific data. It first retrieves the current value of the thread's local storage and prepares to store a new value, indicating a setup phase for subsequent operations.\n\nThe function checks a specific condition related to a pointer stored in the `ESI` register. If this pointer is non-zero, it proceeds to call another function, likely for initialization or setup purposes. This call is made with parameters that include a pointer to the stack, suggesting that it may be passing context or state information to the called function.\n\nSubsequently, the function increments a value located at a specific memory address, which appears to be a counter or a state variable. This increment operation indicates that the function is tracking the number of times it has been executed or a specific event has occurred. The updated value is then stored back into memory, ensuring that the state is preserved for future calls.\n\nThe function also performs a conditional check on the pointer in `ESI` again, and if it is still non-zero, it executes another function call. This suggests a loop or repeated operation based on the state of the pointer, which may be indicative of a resource management or cleanup routine.\n\nFinally, the function restores the original state of the thread-local storage and cleans up the stack before returning control to the caller. This structured approach, with checks and function calls based on the state of specific variables, indicates that the function is likely involved in managing resources or maintaining state across multiple invocations, possibly for purposes such as persistence or tracking execution flow within a larger application context.",
+      "Matched Sentence": "This increment operation indicates that the function is tracking the number of times it has been executed or a specific event has occurred.",
+      "Similarity": 0.763381
+    }
+  ],
+  "FUN_10001910_1": [],
+  "FUN_10001fb0_1": [
+    {
+      "ATT&CK ID": "T1027.005",
+      "Indicator": "Contains XOR operation loops [Stream disassembly]: Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-96-1001BF19\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-96-1001BF19\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-850-1001B6AD\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-850-1001B6AD\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-770-10011C31\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-770-10011C31\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-21-100110E2\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-21-100110E2\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-713-10014AC0\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-833-1001AFE0\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-833-1001AFE0\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-787-10025810\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-787-10025810\n Assembly shows XOR instruction xor eax\n ebp in Stream UID: 16111-786-10022120\n Assembly shows XOR instruction xor ecx\n ebp in Stream UID: 16111-786-10022120",
+      "Comment": "The function initiates its operations by manipulating memory and invoking a series of API calls to interact with system resources. It begins by performing a bitwise XOR operation on a value retrieved from a specific memory address, which is then used to set up the stack for subsequent function calls. The function retrieves a pointer to a structure, likely representing a module or process, and accesses its fields to gather necessary information for further processing.\n\nKey API calls are made to execute functions that appear to handle file operations and possibly process management. The function checks specific conditions based on the values obtained from the structure, which dictate the flow of execution. For instance, it evaluates whether certain offsets within the structure meet predefined criteria, leading to conditional jumps that alter the control flow based on the results of these checks.\n\nThroughout its execution, the function appears to focus on data manipulation and possibly persistence mechanisms, as indicated by the repeated calls to a specific function that seems to handle memory or resource management. The function may also be involved in creating or modifying artifacts within the system, as it interacts with memory addresses that suggest the presence of dynamically allocated resources.\n\nIn summary, the function is designed to perform low-level operations that involve memory manipulation, conditional logic based on system state, and interactions with APIs that manage files and processes. Its behavior suggests objectives related to data handling and potential persistence within the system environment.",
+      "Matched Sentence": "It begins by performing a bitwise XOR operation on a value retrieved from a specific memory address, which is then used to set up the stack for subsequent function calls.",
+      "Similarity": 0.799412
+    },
+    {
+      "ATT&CK ID": "T1057",
+      "Indicator": "Queries basic information of the specified process: \"rundll32.exe\" queries basic process information of the  \"C:\\Windows\\SysWOW64\\rundll32.exe\" (UID: 5780)",
+      "Comment": "The function initiates its operations by manipulating memory and invoking a series of API calls to interact with system resources. It begins by performing a bitwise XOR operation on a value retrieved from a specific memory address, which is then used to set up the stack for subsequent function calls. The function retrieves a pointer to a structure, likely representing a module or process, and accesses its fields to gather necessary information for further processing.\n\nKey API calls are made to execute functions that appear to handle file operations and possibly process management. The function checks specific conditions based on the values obtained from the structure, which dictate the flow of execution. For instance, it evaluates whether certain offsets within the structure meet predefined criteria, leading to conditional jumps that alter the control flow based on the results of these checks.\n\nThroughout its execution, the function appears to focus on data manipulation and possibly persistence mechanisms, as indicated by the repeated calls to a specific function that seems to handle memory or resource management. The function may also be involved in creating or modifying artifacts within the system, as it interacts with memory addresses that suggest the presence of dynamically allocated resources.\n\nIn summary, the function is designed to perform low-level operations that involve memory manipulation, conditional logic based on system state, and interactions with APIs that manage files and processes. Its behavior suggests objectives related to data handling and potential persistence within the system environment.",
+      "Matched Sentence": "The function retrieves a pointer to a structure, likely representing a module or process, and accesses its fields to gather necessary information for further processing.",
+      "Similarity": 0.810693
+    }
+  ],
+  "FUN_10002040_1": [],
+  "FUN_100020f0_1": [],
+  "FUN_10002110_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to dynamically load libraries: LoadLibraryW@KERNEL32.dll at 16111-828-1001AA3D",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for various Windows API calls. It utilizes `CreateFileW` to open or create a file at a specified path, indicating a focus on file manipulation. The function checks for the success of this operation, and if successful, it proceeds to write data into the file using `WriteFile`, thereby potentially modifying or creating a new file on the system.\n\nIn addition to file operations, the function interacts with the Windows registry through `RegOpenKeyExW` and `RegSetValueExW`, suggesting an intention to store or modify configuration settings. It specifically targets a registry key that may be related to application settings or persistence mechanisms, indicating a behavioral objective of maintaining a presence on the system.\n\nThe control flow of the function is structured with conditionals that determine the execution path based on the success of previous operations. This includes checks for file existence and the success of registry modifications, which guide the function's behavior and ensure that it only proceeds when certain conditions are met.\n\nOverall, the function exhibits a clear pattern of file I/O and registry manipulation, aiming to establish persistence and potentially exfiltrate or store data. The use of specific file paths and registry keys highlights its interaction with critical system components, reinforcing its role in modifying the system's state.",
+      "Matched Sentence": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for various Windows API calls.",
+      "Similarity": 0.865918
+    }
+  ],
+  "FUN_100021a0_1": [],
+  "FUN_100021c0_1": [],
+  "FUN_10002300_1": [],
+  "FUN_100025a0_1": [],
+  "FUN_10002720_1": [],
+  "FUN_10002bb0_1": [],
+  "FUN_10002c30_1": [],
+  "FUN_10002cd0_1": [],
+  "FUN_10002d70_1": [],
+  "FUN_10002de0_1": [],
+  "FUN_100034f0_1": [],
+  "FUN_10003650_1": [],
+  "FUN_10003720_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to create a new process (API string): Found reference to API \"levateCreateProcess\" (Indicator: \"CreateProcess\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found reference to API \"<SHIM NAME=\"ElevateCreateProcess\" COMMAND_LINE=\"NoManifestCheck\">\" (Indicator: \"CreateProcess\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found reference to API \"<HOOK MODULE=\"KERNEL32.DLL\" FUNCTION=\"CreateProcessA\"/>\" (Indicator: \"CreateProcess\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found reference to API \"<HOOK MODULE=\"KERNEL32.DLL\" FUNCTION=\"CreateProcessW\"/>\" (Indicator: \"CreateProcess\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found reference to API \"CreateProcessW\" (Indicator: \"CreateProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on manipulating memory and managing state through a sequence of API calls. It begins by setting up a structured environment, utilizing the `FS` segment to store a pointer that facilitates thread-local storage. The function then initializes several variables and checks specific conditions related to the state of an object referenced by the `ESI` register.\n\nThroughout its execution, the function makes repeated calls to another function at `0x100104b6`, which appears to handle some form of processing or validation based on the values stored in the object's fields. The function modifies various fields within the object, specifically updating values at offsets like `0x70`, `0x54`, `0x38`, and `0x1c`, which likely represent different states or flags. These modifications are accompanied by conditional checks that determine whether to proceed with further actions based on the current state of the object.\n\nThe function's behavior suggests a focus on state management, potentially for a resource or service that requires initialization or configuration. It appears to be designed to ensure that certain conditions are met before allowing further operations, indicating a mechanism for maintaining integrity or consistency within the system. The use of specific byte values and the manipulation of memory locations hint at a low-level interaction with system resources, possibly for performance optimization or direct control over the object's lifecycle. Overall, the function is structured to enforce a controlled flow of execution, ensuring that each step is validated before proceeding to the next.",
+      "Matched Sentence": "Throughout its execution, the function makes repeated calls to another function at `0x100104b6`, which appears to handle some form of processing or validation based on the values stored in the object's fields.",
+      "Similarity": 0.750263
+    }
+  ],
+  "FUN_10003810_1": [],
+  "FUN_10003c00_1": [],
+  "FUN_10003e90_1": [],
+  "FUN_10004070_1": [],
+  "FUN_10004270_1": [],
+  "FUN_10004710_1": [],
+  "FUN_100047f0_1": [],
+  "FUN_10004a60_1": [],
+  "FUN_10004bf0_1": [],
+  "FUN_10004cc0_1": [],
+  "FUN_10004e20_1": [],
+  "FUN_100050a0_1": [],
+  "FUN_100051c0_1": [],
+  "FUN_10005210_1": [],
+  "FUN_10005260_1": [],
+  "FUN_100052e0_1": [],
+  "FUN_10005480_1": [],
+  "FUN_10005640_1": [],
+  "FUN_10005720_1": [],
+  "FUN_10005810_1": [],
+  "FUN_10005900_1": [],
+  "FUN_10005b00_1": [],
+  "FUN_10005b80_1": [],
+  "FUN_10005c80_1": [],
+  "FUN_10005d60_1": [],
+  "FUN_10005e00_1": [],
+  "FUN_10006050_1": [],
+  "FUN_10006050_2": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Calls an API typically used to retrieve function addresses: \"rundll32.exe\" called \"GetProcAddress\" with a parameter InitializeCriticalSectionEx (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter FlsAlloc (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter FlsSetValue (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter FlsGetValue (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter LCMapStringEx (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter FlsFree (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter InitOnceExecuteOnce (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateEventExW (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateSemaphoreW (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateSemaphoreExW (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateThreadpoolTimer (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter SetThreadpoolTimer (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter WaitForThreadpoolTimerCallbacks (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CloseThreadpoolTimer (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateThreadpoolWait (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter SetThreadpoolWait (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CloseThreadpoolWait (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter FlushProcessWriteBuffers (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter FreeLibraryWhenCallbackReturns (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter GetCurrentProcessorNumber (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateSymbolicLinkW (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter GetCurrentPackageId (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter GetTickCount64 (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter GetFileInformationByHandleEx (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter SetFileInformationByHandle (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter GetSystemTimePreciseAsFileTime (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter InitializeConditionVariable (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter WakeConditionVariable (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter WakeAllConditionVariable (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter SleepConditionVariableCS (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter InitializeSRWLock (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter AcquireSRWLockExclusive (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter TryAcquireSRWLockExclusive (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter ReleaseSRWLockExclusive (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter SleepConditionVariableSRW (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CreateThreadpoolWork (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter SubmitThreadpoolWork (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CloseThreadpoolWork (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CompareStringEx (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter GetLocaleInfoEx (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter AreFileApisANSI (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter RtlGetVersion (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CoCreateInstance (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CoCreateInstanceEx (UID: 00000000-00005780)\n \"rundll32.exe\" called \"GetProcAddress\" with a parameter CoGetClassObject (UID: 00000000-00005780)",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data structures in memory and interacting with system resources. It begins by initializing a memory space and making API calls to allocate resources, likely using functions akin to `CreateFileW` for file handling and `RegSetValueExW` for registry modifications. The function checks specific conditions through a series of comparisons and loops, which dictate the flow of execution and determine whether certain actions are taken based on the state of the data.\n\nThroughout its execution, the function appears to be involved in data validation and modification, as it reads from and writes to specific memory locations. It utilizes a repetitive structure to compare data against predefined values, indicating a pattern of validation or configuration checks. The function also interacts with specific memory addresses, which may correspond to configuration settings or state indicators, and modifies them based on the results of its checks.\n\nAdditionally, the function may create or modify artifacts in the system, such as files or registry entries, which could be indicative of persistence mechanisms or configuration settings. The presence of specific strings and memory addresses suggests that the function is tailored to interact with particular components of the system, potentially for purposes such as data exfiltration or system configuration.\n\nIn summary, the function is designed to allocate memory, validate and modify data structures, and interact with system resources through API calls, with a focus on ensuring specific conditions are met and potentially altering system state or configuration.",
+      "Matched Sentence": "It begins by initializing a memory space and making API calls to allocate resources, likely using functions akin to `CreateFileW` for file handling and `RegSetValueExW` for registry modifications.",
+      "Similarity": 0.827111
+    }
+  ],
+  "FUN_10006050_3": [],
+  "Catch@100069bc_1": [],
+  "FUN_100069e0_1": [
+    {
+      "ATT&CK ID": "T1497.003",
+      "Indicator": "Contains ability to delay execution by waiting for signal/timeout (API string): Found reference to API \"GetSystemTimeAsFileTime\" (Indicator: \"GetSystemTimeAsFileTime\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"QueryPerformanceCounter\" (Indicator: \"QueryPerformanceCounter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"WaitForSingleObject\" (Indicator: \"WaitForSingleObject\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"WaitForSingleObjectEx\" (Indicator: \"WaitForSingleObject\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"WaitForSingleObjectEx\" (Indicator: \"WaitForSingleObjectEx\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"QueryPerformanceCounter\" (Indicator: \"QueryPerformanceCounter\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"GetSystemTimeAsFileTime\" (Indicator: \"GetSystemTimeAsFileTime\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"NtQuerySystemInformation\" (Indicator: \"NtQuerySystemInformation\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations that primarily focus on manipulating specific values in memory and interacting with system resources. It begins by checking a pointer passed as an argument, ensuring it is not null. If the pointer is valid, it retrieves a value from a structure pointed to by a register and combines it with the argument using a bitwise OR operation. This operation is conditional based on the state of another value in the structure, which determines whether additional flags are set.\n\nThe function utilizes direct memory manipulation to update the value at a specific stack location, effectively modifying the state of the program based on the conditions evaluated. This behavior suggests a focus on configuring or adjusting settings dynamically, likely for the purpose of enabling or disabling certain features or functionalities within the application.\n\nIn terms of system interactions, the function does not appear to make explicit API calls for file or registry operations, but its manipulation of memory values indicates a potential influence on the program's behavior that could affect how it interacts with other system components. The absence of direct file or registry interactions suggests that the function's primary role is internal state management rather than external resource manipulation. Overall, the function is structured to ensure that specific conditions are met before proceeding with its operations, reflecting a careful control flow that prioritizes stability and correctness in its execution.",
+      "Matched Sentence": "In terms of system interactions, the function does not appear to make explicit API calls for file or registry operations, but its manipulation of memory values indicates a potential influence on the program's behavior that could affect how it interacts with other system components.",
+      "Similarity": 0.80658
+    }
+  ],
+  "FUN_10006a10_1": [],
+  "FUN_10006c00_1": [
+    {
+      "ATT&CK ID": "T1082",
+      "Indicator": "Calls an API typically used to get system version information: \"rundll32.exe\" called \"RtlGetVersion\" with parameter 140100000a00000000000000ab3f00000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (UID: 00000000-00005780)",
+      "Comment": "The function begins by manipulating the thread's local storage, specifically by saving the current value of the FS register and setting it to a new value derived from a specific memory address. This operation is crucial for maintaining thread-specific data integrity. It then initializes several variables, including pointers and counters, which are essential for subsequent operations.\n\nThe function makes a call to another routine, indicated by the `CALL 0x100109ba`, which likely performs a significant task, possibly related to resource allocation or initialization. Following this, it sets up a data structure in memory, initializing specific fields to predetermined values, which suggests that the function is preparing an object or a context for further processing.\n\nA notable aspect of the function is its use of conditional logic to manage the flow of execution. It appears to check certain conditions before proceeding with operations, which may involve setting values in a structure or preparing for a file operation. The manipulation of memory addresses and the use of offsets indicate that the function is likely interacting with a complex data structure, possibly for managing resources or configurations.\n\nThe function concludes by restoring the original value of the FS register, ensuring that the thread's local storage is returned to its previous state, which is a common practice to maintain stability and prevent corruption of thread-specific data. Overall, the function exhibits a structured approach to managing memory and resources, with a focus on initializing and preparing data for further operations, likely in the context of a larger application or system service.",
+      "Matched Sentence": "The function makes a call to another routine, indicated by the `CALL 0x100109ba`, which likely performs a significant task, possibly related to resource allocation or initialization.",
+      "Similarity": 0.804612
+    }
+  ],
+  "FUN_10006c80_1": [],
+  "FUN_10006ce0_1": [],
+  "Catch@10006d6b_1": [],
+  "FUN_10006d90_1": [],
+  "FUN_10006e20_1": [
+    {
+      "ATT&CK ID": "T1057",
+      "Indicator": "Contains ability to determine if process is running under WOW64 (API string): Found reference to API \"IsWow64Process2\" (Indicator: \"IsWow64Process\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data structures in memory, likely representing a linked list or a similar data structure. It begins by setting up a stack frame and initializing local variables. The function checks specific conditions on the data it processes, particularly examining byte values at certain offsets, which appear to indicate states or flags.\n\nKey API calls are utilized throughout the function, including memory management and data manipulation functions. The function appears to interact with memory locations that may represent objects or nodes in a data structure, as it frequently reads and writes to these locations. It uses conditional checks to determine the flow of execution, including comparisons of byte values that dictate whether certain branches of logic are executed.\n\nThe function exhibits a pattern of iterating through elements, modifying their properties based on specific conditions. It updates values at various offsets, which may correspond to attributes of the objects being manipulated. The presence of multiple comparisons and jumps indicates a complex control flow, where the function may be traversing a structure and performing updates or deletions based on the state of the data.\n\nOverall, the function's behavior suggests it is involved in maintaining or updating a data structure, potentially for purposes such as data persistence or state management. It modifies the properties of elements based on their current state, which could be indicative of a larger system operation, such as managing a cache or a list of active objects. The function's interactions with memory and its control flow suggest a focus on ensuring data integrity and consistency within the structure it operates on.",
+      "Matched Sentence": "The function checks specific conditions on the data it processes, particularly examining byte values at certain offsets, which appear to indicate states or flags.",
+      "Similarity": 0.761059
+    }
+  ],
+  "FUN_10006e20_2": [],
+  "FUN_10007180_1": [],
+  "FUN_100071e0_1": [],
+  "FUN_10007260_1": [],
+  "FUN_10007260_2": [],
+  "FUN_10007530_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to set/get the last-error code for a calling thread (API string): Found reference to API \"SetLastError\" (Indicator: \"SetLastError\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetLastError\" (Indicator: \"GetLastError\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"SetLastError\" (Indicator: \"SetLastError\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"GetLastError\" (Indicator: \"GetLastError\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by manipulating the thread's local storage, specifically setting up a new exception handler using the `FS` segment register. It then checks a specific condition in a data structure pointed to by the `EBP` register, which likely represents a context or state object. If this condition is met, the function proceeds to call another function, passing parameters that include a pointer to the context object.\n\nThe function performs a series of checks and updates on the data structure, particularly focusing on a field that appears to track a count or status, as indicated by the comparison against the value `0x10`. If this value is exceeded, it invokes a secondary function, which may be responsible for further processing or cleanup, and modifies additional fields within the data structure.\n\nThroughout its execution, the function utilizes stack manipulation to manage local variables and parameters, ensuring that the state is preserved across calls. It concludes by restoring the previous state of the thread's local storage and returning control to the caller, indicating a structured approach to resource management and error handling.\n\nOverall, the function exhibits behavior consistent with managing stateful operations, likely within a larger system that requires careful tracking of context and status, possibly in a multi-threaded environment. The use of specific memory locations and structured data suggests a focus on maintaining integrity and consistency in the face of concurrent operations.",
+      "Matched Sentence": "It concludes by restoring the previous state of the thread's local storage and returning control to the caller, indicating a structured approach to resource management and error handling.",
+      "Similarity": 0.753354
+    }
+  ],
+  "FUN_100075d0_1": [],
+  "FUN_10007620_1": [],
+  "FUN_100076e0_1": [],
+  "FUN_10007860_1": [],
+  "FUN_10007a60_1": [],
+  "FUN_10007ae0_1": [],
+  "FUN_10007c20_1": [],
+  "FUN_10007cf0_1": [],
+  "FUN_10007dc0_1": [],
+  "FUN_10007f30_1": [],
+  "FUN_10007f30_2": [],
+  "FUN_10008340_1": [],
+  "FUN_100084f0_1": [],
+  "FUN_100085e0_1": [],
+  "Catch@1000869d_1": [
+    {
+      "ATT&CK ID": "T1480",
+      "Indicator": "Shows ability to use execution guardrails: The analysis shows indicators which can be used as execution guardrails to ensure that payload only executes against intended targets/system. Matched sigs: Able to identify virtual environment by using user activity (API string)\n Matched sigs: Contains ability to delay execution by waiting for signal/timeout (API string)\n Matched sigs: Contains ability to retrieve the time elapsed since the system was started (API string)\n Matched sigs: Able to identify virtual environment by using API string",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for various Windows API calls. It utilizes `CreateFileW` to open or create a file at a specified path, indicating a focus on file manipulation. The function checks for the existence of the file and, based on the result, may proceed to write data into it using `WriteFile`, thereby potentially modifying or creating a new file artifact on the system.\n\nIn addition to file operations, the function interacts with the Windows registry through `RegOpenKeyExW` and `RegSetValueExW`, suggesting an intention to modify or create registry keys and values. This behavior is indicative of persistence mechanisms, as it may be setting up configurations that allow it to execute on system startup or maintain its presence on the system.\n\nThe control flow of the function is structured with conditionals that determine the execution path based on the success or failure of previous operations, such as file creation or registry modifications. This structured approach ensures that the function can adapt its behavior based on the current state of the system, enhancing its effectiveness in achieving its objectives.\n\nOverall, the function exhibits a clear intent to establish persistence through file and registry modifications, leveraging key Windows APIs to interact with system resources effectively. The artifacts created or modified during its execution could serve as indicators of its presence and functionality within the system.",
+      "Matched Sentence": "The artifacts created or modified during its execution could serve as indicators of its presence and functionality within the system.",
+      "Similarity": 0.802898
+    }
+  ],
+  "FUN_100086b0_1": [],
+  "FUN_100086b0_2": [],
+  "FUN_100086b0_3": [],
+  "FUN_100086b0_4": [],
+  "FUN_100086b0_5": [],
+  "FUN_100086b0_6": [],
+  "FUN_10009a60_1": [],
+  "FUN_10009cd0_1": [],
+  "FUN_10009ef0_1": [],
+  "FUN_10009ef0_2": [],
+  "FUN_10009ef0_3": [],
+  "FUN_10009ef0_4": [],
+  "FUN_10009ef0_5": [],
+  "FUN_1000b190_1": [
+    {
+      "ATT&CK ID": "T1518.001",
+      "Indicator": "Possibly checks for the presence of an Antivirus engine: \"baidu.com/\" (Indicator: \"baidu\") in Source: aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47",
+      "Comment": "The function performs a series of operations primarily focused on interacting with system resources, including memory management, file handling, and potentially network communications. It begins by setting up a stack frame and initializing various local variables, including pointers and counters. The function utilizes several API calls to manage memory and execute tasks, such as invoking methods from dynamically loaded libraries.\n\nKey actions include the allocation of memory and the manipulation of data structures, which suggest that the function is likely processing or transforming data. It makes extensive use of conditional statements and loops to control the flow of execution, indicating that it may be iterating over data or waiting for specific conditions to be met before proceeding.\n\nThe function also interacts with file paths and registry keys, hinting at potential persistence mechanisms or configuration settings. It appears to check for the existence of certain files or registry entries, which could be indicative of a setup routine or a check for previous installations or configurations.\n\nAdditionally, the function may be involved in data exfiltration or communication with external servers, as it includes calls that suggest network activity. The presence of specific strings and constants throughout the code could point to hardcoded URLs or identifiers used for these interactions.\n\nOverall, the function exhibits a complex behavior pattern characterized by its systematic approach to resource management, data processing, and potential external communications, which could serve various objectives such as persistence, data manipulation, or system configuration.",
+      "Matched Sentence": "It appears to check for the existence of certain files or registry entries, which could be indicative of a setup routine or a check for previous installations or configurations.",
+      "Similarity": 0.818751
+    },
+    {
+      "ATT&CK ID": "T1071.001",
+      "Indicator": "Uses cURL to communicate over HTTPS: Found string \"curl_easy_setopt\" (Indicator: \"curl_easy_setopt\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found string \"curl_easy_getinfo\" (Indicator: \"curl_easy_getinfo\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found string \"curl_slist_append\" (Indicator: \"curl_slist_append\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found string \"libcurl.dll\" (Indicator: \"libcurl\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found string \":\\Program Files\\mitmproxy\\bin\\libcurl.dll\" (Indicator: \"libcurl\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \":\\windows\\system32\\wbem\\libcurl.dll\" (Indicator: \"libcurl\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \":\\windows\\system32\\libcurl.dll\" (Indicator: \"libcurl\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \"??\\c:\\windows\\libcurl.dll\" (Indicator: \"libcurl\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \":\\WINDOWS\\system32\\libcurl.dll\" (Indicator: \"libcurl\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \":\\windows\\libcurl.dll\" (Indicator: \"libcurl\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on interacting with system resources, including memory management, file handling, and potentially network communications. It begins by setting up a stack frame and initializing various local variables, including pointers and counters. The function utilizes several API calls to manage memory and execute tasks, such as invoking methods from dynamically loaded libraries.\n\nKey actions include the allocation of memory and the manipulation of data structures, which suggest that the function is likely processing or transforming data. It makes extensive use of conditional statements and loops to control the flow of execution, indicating that it may be iterating over data or waiting for specific conditions to be met before proceeding.\n\nThe function also interacts with file paths and registry keys, hinting at potential persistence mechanisms or configuration settings. It appears to check for the existence of certain files or registry entries, which could be indicative of a setup routine or a check for previous installations or configurations.\n\nAdditionally, the function may be involved in data exfiltration or communication with external servers, as it includes calls that suggest network activity. The presence of specific strings and constants throughout the code could point to hardcoded URLs or identifiers used for these interactions.\n\nOverall, the function exhibits a complex behavior pattern characterized by its systematic approach to resource management, data processing, and potential external communications, which could serve various objectives such as persistence, data manipulation, or system configuration.",
+      "Matched Sentence": "The presence of specific strings and constants throughout the code could point to hardcoded URLs or identifiers used for these interactions.",
+      "Similarity": 0.794017
+    }
+  ],
+  "FUN_1000b190_2": [],
+  "FUN_1000b190_3": [],
+  "Catch@1000b967_1": [],
+  "FUN_1000b980_1": [
+    {
+      "ATT&CK ID": "T1057",
+      "Indicator": "Contains ability to retrieve/open a process (API string): Found reference to API \"GetProcessHeap\" (Indicator: \"GetProcessHeap\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetProcessHeap\" (Indicator: \"GetProcessHeap\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"NtOpenProcessToken\" (Indicator: \"OpenProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function begins by setting up a stack frame and initializing several local variables, including pointers and memory addresses. It utilizes the `CALL` instruction to invoke various functions, indicating a reliance on external libraries for its operations. The function appears to interact with system components through multiple API calls, including those that manage memory and process execution.\n\nA significant aspect of the function's behavior is its use of conditional checks and loops to control the flow of execution. It tests the results of function calls and the state of certain variables, which dictate subsequent actions. For instance, it checks the return values of API calls to determine whether to proceed with further operations or to exit early.\n\nThe function also engages in file and memory operations, suggesting a focus on data manipulation or persistence. It makes calls to functions that likely handle file I/O, as indicated by the presence of file paths and memory addresses being pushed onto the stack. Additionally, it appears to modify or check specific memory locations, which could be indicative of attempts to alter system state or behavior.\n\nThroughout its execution, the function maintains a structured approach, with clear sequences of operations that reflect its objectives. It appears to be designed for tasks that may involve data retrieval, modification, or possibly even persistence mechanisms, as it interacts with various system resources and checks conditions that could lead to different execution paths based on the state of the system or the results of previous operations.",
+      "Matched Sentence": "The function appears to interact with system components through multiple API calls, including those that manage memory and process execution.",
+      "Similarity": 0.816278
+    },
+    {
+      "ATT&CK ID": "T1489",
+      "Indicator": "Contains ability to terminate a process (API string): Found reference to API \"TerminateProcess\" (Indicator: \"TerminateProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"ExitProcess\" (Indicator: \"ExitProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"CorExitProcess\" (Indicator: \"ExitProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"ExitProcess\" (Indicator: \"ExitProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"TerminateProcess\" (Indicator: \"TerminateProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function begins by setting up a stack frame and initializing several local variables, including pointers and memory addresses. It utilizes the `CALL` instruction to invoke various functions, indicating a reliance on external libraries for its operations. The function appears to interact with system components through multiple API calls, including those that manage memory and process execution.\n\nA significant aspect of the function's behavior is its use of conditional checks and loops to control the flow of execution. It tests the results of function calls and the state of certain variables, which dictate subsequent actions. For instance, it checks the return values of API calls to determine whether to proceed with further operations or to exit early.\n\nThe function also engages in file and memory operations, suggesting a focus on data manipulation or persistence. It makes calls to functions that likely handle file I/O, as indicated by the presence of file paths and memory addresses being pushed onto the stack. Additionally, it appears to modify or check specific memory locations, which could be indicative of attempts to alter system state or behavior.\n\nThroughout its execution, the function maintains a structured approach, with clear sequences of operations that reflect its objectives. It appears to be designed for tasks that may involve data retrieval, modification, or possibly even persistence mechanisms, as it interacts with various system resources and checks conditions that could lead to different execution paths based on the state of the system or the results of previous operations.",
+      "Matched Sentence": "For instance, it checks the return values of API calls to determine whether to proceed with further operations or to exit early.",
+      "Similarity": 0.774461
+    }
+  ],
+  "Catch@1000bb8a_1": [],
+  "FUN_1000bbb0_1": [],
+  "FUN_1000bc20_1": [],
+  "FUN_1000bcc0_1": [],
+  "FUN_1000be30_1": [],
+  "FUN_1000c080_1": [],
+  "FUN_1000c0f0_1": [],
+  "FUN_1000c110_1": [],
+  "FUN_1000c170_1": [],
+  "FUN_1000c1e0_1": [],
+  "FUN_1000c300_1": [],
+  "FUN_1000c600_1": [],
+  "FUN_1000c750_1": [],
+  "FUN_1000c7f0_1": [],
+  "FUN_1000ca20_1": [],
+  "FUN_1000ca30_1": [
+    {
+      "ATT&CK ID": "T1543",
+      "Indicator": "Contains ability to retrieve the contents of the STARTUPINFO structure (API string): Found reference to API \"GetStartupInfoA\" (Indicator: \"GetStartupInfo\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function performs a series of operations primarily focused on data manipulation and memory management. It begins by initializing pointers and variables, specifically setting up a structure in memory that appears to be related to some form of data storage or configuration. The function utilizes memory allocation techniques to create a new data structure, which is populated with values derived from another structure referenced by the `EDI` register.\n\nKey API calls are made to facilitate this process, including a call to a function at `0x1000bcc0`, which likely handles additional data processing or validation. The function also retrieves and stores various fields from the original structure into the newly allocated memory, indicating a copying or cloning operation. This includes handling both integer and byte values, suggesting that the function is concerned with preserving the integrity of the data being manipulated.\n\nThe control flow of the function is characterized by conditional checks and loops that ensure the correct execution of data handling tasks. For instance, it checks for the presence of certain values before proceeding with further operations, which indicates a level of validation to ensure that the data being processed meets specific criteria.\n\nAdditionally, the function interacts with system resources by potentially modifying or creating data structures in memory, which may be used later in the program's execution. The presence of checks for null pointers and other conditions suggests that the function is designed to handle various states of the data it processes, ensuring robustness against unexpected input.\n\nOverall, the function's behavior is centered around data manipulation, memory management, and validation, with a clear focus on ensuring that the data structures it works with are correctly initialized and populated. This indicates a potential role in setting up configurations or preparing data for subsequent operations within a larger application context.",
+      "Matched Sentence": "It begins by initializing pointers and variables, specifically setting up a structure in memory that appears to be related to some form of data storage or configuration.",
+      "Similarity": 0.772022
+    }
+  ],
+  "FUN_1000cb60_1": [],
+  "FUN_1000cd20_1": [],
+  "FUN_1000ce30_1": [
+    {
+      "ATT&CK ID": "T1027.007",
+      "Indicator": "Contains ability to dynamically determine API calls: Found GetProcAddress() and LoadLibraryA() in an import section (Source: aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47)",
+      "Comment": "The function initiates by accessing a specific memory address to retrieve a pointer, which it subsequently uses to invoke a function through a dynamic call. This is achieved by pushing parameters onto the stack, including a pointer from the stack and a zero value, before executing the call. The function's primary objective appears to be interacting with a system component, likely for the purpose of executing a specific operation defined by the retrieved function pointer.\n\nIn terms of system interactions, the function relies on a dynamic linking mechanism to access the necessary APIs, indicating a level of abstraction in its operations. The use of stack manipulation suggests that it may be preparing to handle multiple parameters or return values, which is common in functions that interface with system-level operations.\n\nThe control flow is straightforward, with a single call to the dynamically resolved function, indicating a direct and efficient execution path. There are no loops or complex conditionals present, which implies that the function is designed for a specific task rather than a repetitive or conditional operation.\n\nOverall, the function's behavior is characterized by its reliance on dynamic function calls, efficient parameter handling, and a clear focus on executing a defined operation within the system, likely related to memory management or process control.",
+      "Matched Sentence": "In terms of system interactions, the function relies on a dynamic linking mechanism to access the necessary APIs, indicating a level of abstraction in its operations.",
+      "Similarity": 0.843169
+    }
+  ],
+  "FUN_1000d160_1": [],
+  "FUN_1000d280_1": [],
+  "FUN_1000d810_1": [
+    {
+      "ATT&CK ID": "T1622",
+      "Indicator": "Contains ability to check debugger is running (API string): Found reference to API \"IsDebuggerPresent\" (Indicator: \"IsDebuggerPresent\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"OutputDebugStringA\" (Indicator: \"OutputDebugString\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"QueryPerformanceCounter\" (Indicator: \"QueryPerformanceCounter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetTickCount\" (Indicator: \"GetTickCount\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data structures and interacting with system resources. It begins by setting up the stack and initializing several registers, which are used to manage data flow throughout the function. The function appears to process a data structure, likely an array or list, as it iterates through elements, checking conditions and performing calculations based on the data it encounters.\n\nKey API calls are made to facilitate these operations, including a call to a function at address `0x1000bcc0`, which is likely responsible for handling specific data processing tasks. The function also interacts with memory locations, moving data between registers and memory, which suggests it is managing dynamic data structures.\n\nThe control flow of the function is driven by conditional checks and loops. It includes tests to determine whether certain conditions are met, such as checking if a pointer is null or if specific values are present in the data being processed. These checks dictate the path of execution, leading to different branches of logic depending on the state of the data.\n\nAdditionally, the function appears to handle potential errors or exceptional cases, as indicated by the presence of multiple conditional jumps that redirect execution based on the results of previous operations. This suggests a robust design aimed at ensuring stability during execution.\n\nOverall, the function's behavior is characterized by its focus on data manipulation, conditional processing, and interaction with system memory, indicating its role in a larger application that likely involves complex data handling or processing tasks.",
+      "Matched Sentence": "It includes tests to determine whether certain conditions are met, such as checking if a pointer is null or if specific values are present in the data being processed.",
+      "Similarity": 0.766198
+    }
+  ],
+  "FUN_1000d970_1": [],
+  "FUN_1000db50_1": [
+    {
+      "ATT&CK ID": "T1027",
+      "Indicator": "Shows ability to obfuscate file or information: The analysis contains indicators for cyrpto or data obfuscation(base64/decrypt) which can hide information. Matched sigs: Contains XOR operation loops [Stream disassembly]",
+      "Comment": "The function initiates its operations by manipulating the thread's local storage, specifically setting up a new value in the FS segment register, which is often used for thread-specific data. It then calls an external function, likely to allocate memory or perform a specific task, passing a constant value that may represent a size or type of operation. Upon successful execution of this call, the function checks the return value to determine the next steps.\n\nThe function employs a series of conditional checks and loops to process data. It appears to be iterating over a data structure, incrementing pointers and checking for specific conditions, which suggests it is handling a collection of items or entries. The use of XOR operations indicates that it may be performing some form of data obfuscation or manipulation.\n\nIn terms of system interactions, the function interacts with memory directly, modifying values at specific offsets, which could imply it is working with structured data or objects. It also retrieves and stores values from a data structure, potentially preparing them for further processing or storage.\n\nOverall, the function exhibits behavior consistent with data manipulation and memory management, likely as part of a larger system operation that involves processing or transforming data in a specific context. The precise nature of the data being handled and the ultimate goal of the function remain somewhat abstract, but the control flow and memory interactions suggest a focus on efficient data handling and manipulation.",
+      "Matched Sentence": "The use of XOR operations indicates that it may be performing some form of data obfuscation or manipulation.",
+      "Similarity": 0.878239
+    }
+  ],
+  "FUN_1000dd80_1": [],
+  "FUN_1000e0d0_1": [],
+  "FUN_1000e300_1": [],
+  "FUN_1000e460_1": [],
+  "FUN_1000e5c0_1": [
+    {
+      "ATT&CK ID": "T1057",
+      "Indicator": "Contains ability to enumerate process and/or its information (API string): Found reference to API \"GetCurrentProcess\" (Indicator: \"GetCurrentProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetEnvironmentStringsW\" (Indicator: \"GetEnvironmentStrings\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetCurrentProcessId\" (Indicator: \"GetCurrentProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetModuleHandleA\" (Indicator: \"GetModuleHandle\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetEnvironmentStrings\" (Indicator: \"GetEnvironmentStrings\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetCurrentProcess\" (Indicator: \"GetCurrentProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"GetModuleHandleExW\" (Indicator: \"GetModuleHandle\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"GetCurrentProcessId\" (Indicator: \"GetCurrentProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"GetModuleHandleW\" (Indicator: \"GetModuleHandle\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function begins by setting up its execution environment, pushing registers onto the stack to preserve their values. It initializes a pointer to a data structure, checking the first element to determine if it is greater than zero, which indicates the presence of data to process. The function then enters a loop where it retrieves values from the data structure, specifically targeting a byte array. \n\nWithin this loop, it calls an external function, likely for processing or validation, passing specific parameters that include addresses of data elements. The function checks the return value to determine the next steps. If certain conditions are met, it continues processing; otherwise, it exits the loop. The loop iterates through the byte array, checking for specific byte values (notably 0x0A and 0x0D), which may represent line endings or delimiters in a text format.\n\nUpon completion of the loop, the function performs a final check to determine if any valid data was processed. If so, it sets a return value indicating success. The function's behavior suggests it is designed for parsing or analyzing a structured data format, potentially for configuration or log files, and it interacts with memory directly to manipulate and read data efficiently. \n\nOverall, the function's primary objectives appear to be data validation and extraction, utilizing direct memory access and external function calls to achieve its goals. The control flow is tightly structured, relying on conditionals to manage the parsing process and ensure that only valid data is considered for further operations.",
+      "Matched Sentence": "It initializes a pointer to a data structure, checking the first element to determine if it is greater than zero, which indicates the presence of data to process.",
+      "Similarity": 0.734057
+    }
+  ],
+  "FUN_1000e680_1": [],
+  "FUN_1000e920_1": [],
+  "FUN_1000eb50_1": [
+    {
+      "ATT&CK ID": "T1083",
+      "Indicator": "Contains ability to read files (API string): Found reference to API \"ReadFile\" (Indicator: \"ReadFile\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on manipulating memory and interacting with system resources, likely for the purpose of data processing or system configuration. It begins by setting up a stack frame and initializing several registers, which indicates preparation for subsequent operations.\n\nKey API calls are utilized throughout the function, including calls to memory management functions that allocate and manipulate data structures. The function appears to check specific conditions related to the data it processes, using conditional statements to determine the flow of execution. For instance, it tests values in memory and makes decisions based on these tests, which suggests that it is designed to handle various scenarios dynamically.\n\nThe function also interacts with specific memory addresses, likely corresponding to configuration settings or data buffers. It modifies values at these addresses, which could indicate an intention to persist certain states or configurations. Additionally, there are indications of file operations, as the function references file paths and may be involved in reading or writing data to disk.\n\nThroughout its execution, the function maintains a focus on ensuring that certain conditions are met before proceeding with critical operations, which is indicative of a robust error-checking mechanism. This control flow, characterized by loops and conditional branches, allows the function to adapt its behavior based on the state of the system or the data it is processing.\n\nIn summary, the function is designed to manipulate memory and system resources effectively, employing a structured approach to control flow that ensures it can handle various operational scenarios. Its interactions with memory addresses and potential file operations suggest a focus on data management and system configuration, possibly for purposes such as persistence or data integrity.",
+      "Matched Sentence": "Additionally, there are indications of file operations, as the function references file paths and may be involved in reading or writing data to disk.",
+      "Similarity": 0.828724
+    }
+  ],
+  "FUN_1000edb0_1": [],
+  "FUN_1000efa0_1": [],
+  "FUN_1000f200_1": [],
+  "FUN_1000f200_2": [],
+  "FUN_1000f590_1": [
+    {
+      "ATT&CK ID": "T1497.002",
+      "Indicator": "Able to identify virtual environment by using user activity (API string): Found string \"GetCommandLineA\" (Indicator: \"GetCommandLine\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found string \"GetCommandLineW\" (Indicator: \"GetCommandLine\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function begins by setting up its execution environment, pushing registers onto the stack to preserve their values. It retrieves a pointer from the stack and uses it to call an API function, likely for memory allocation or resource initialization. The function checks the result of this call, and if it is null, it proceeds to handle the error condition.\n\nAs the function progresses, it performs a series of conditional checks and manipulations on the data it retrieves. It appears to be parsing or processing a string, as it checks for specific byte values that correspond to characters, such as quotes and slashes. This suggests that the function may be involved in interpreting or validating a formatted input, possibly a file path or a command.\n\nThe function also makes multiple calls to another API, which seems to be responsible for further processing or validation of the data. It uses the results of these calls to determine the next steps, including potentially modifying the data or preparing it for output. The control flow includes loops that iterate over the data, checking for specific conditions that dictate how the function should proceed.\n\nThroughout its execution, the function interacts with system components by making API calls that handle memory, string manipulation, and possibly file operations. It checks for specific conditions that may indicate the presence of certain characters or formats, which could be critical for its intended operation. The function's behavior suggests a focus on data validation and processing, with an emphasis on ensuring that the input meets certain criteria before proceeding with further actions. \n\nIn summary, the function is designed to process and validate input data, likely in the form of strings, through a series of API calls and conditional checks. It manipulates memory and interacts with system resources to ensure that the data conforms to expected formats, potentially preparing it for subsequent operations or outputs.",
+      "Matched Sentence": "It appears to be parsing or processing a string, as it checks for specific byte values that correspond to characters, such as quotes and slashes.",
+      "Similarity": 0.767229
+    }
+  ],
+  "FUN_1000f730_1": [],
+  "FUN_1000f920_1": [
+    {
+      "ATT&CK ID": "T1083",
+      "Indicator": "Contains ability to retrieve file and directory information (API string): Found reference to API \"GetSystemDirectoryW\" (Indicator: \"GetSystemDirectory\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"GetFileAttributesW\" (Indicator: \"GetFileAttributes\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data structures and interacting with system resources, particularly through API calls. It begins by setting up a stack frame and initializing various registers, which is typical for preparing the function's execution context. The function makes use of several API calls, including `CreateFileW` and `RegSetValueExW`, to handle file and registry operations, indicating a potential focus on persistence and configuration changes within the system.\n\nThroughout its execution, the function checks conditions and iterates over data, suggesting it processes input data in a loop. It appears to read from a specific memory location and may be validating or transforming this data based on certain criteria. The presence of conditional jumps indicates that the function can alter its flow based on the data it encounters, which may include checks for specific byte values that could signify control characters or delimiters.\n\nThe function also interacts with memory locations that seem to store configuration or state information, potentially modifying these values to reflect new settings or states. This behavior suggests that the function may be involved in establishing persistence mechanisms, as it writes to specific registry keys and modifies memory structures that could be used by other components of the system.\n\nIn summary, the function is designed to manipulate data and system settings through a combination of file and registry operations, utilizing a structured control flow to process input and make decisions based on the data it encounters. Its interactions with system resources indicate a focus on establishing persistence and potentially altering the system's configuration.",
+      "Matched Sentence": "The function makes use of several API calls, including `CreateFileW` and `RegSetValueExW`, to handle file and registry operations, indicating a potential focus on persistence and configuration changes within the system.",
+      "Similarity": 0.846058
+    }
+  ],
+  "std_1": [],
+  "FUN_1000fe01_1": [],
+  "FUN_1000fe6e_1": [],
+  "FUN_100101dc_1": [],
+  "FUN_100101f1_1": [],
+  "FUN_100101fa_1": [],
+  "FUN_1001039a_1": [],
+  "FUN_100103a5_1": [],
+  "FUN_100103b0_1": [],
+  "FUN_100103bb_1": [],
+  "thunk_FUN_10010400_1": [],
+  "FUN_10010400_1": [],
+  "type_info_1": [],
+  "FID_conflict_1": [],
+  "@__security_check_cookie@4_1": [],
+  "FUN_10010914_1": [],
+  "FUN_10010943_1": [],
+  "exception_1": [
+    {
+      "ATT&CK ID": "T1562.001",
+      "Indicator": "Contains ability to modify process attributes (API string): Found reference to API \"SetProcessMitigationPolicy\" (Indicator: \"SetProcessMitigationPolicy\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on interacting with system resources to achieve its objectives. It begins by checking a specific condition in memory, which determines the flow of execution. If the condition is met, it sets a value in memory and subsequently calls another function, indicating a structured approach to control flow.\n\nKey API calls are utilized throughout the function, including memory manipulation and function invocation. The function appears to interact with specific memory addresses, suggesting it may be involved in low-level operations or system modifications. This interaction is indicative of potential persistence mechanisms, as it alters values that could influence the behavior of other components or processes.\n\nThe function also demonstrates a clear intention to manage system resources effectively, as evidenced by its structured control flow that includes conditional checks and function calls. This suggests that the function is designed to execute specific tasks based on the state of the system, potentially leading to further actions such as data manipulation or system configuration changes.\n\nOverall, the function exhibits behavior that aligns with objectives such as persistence and system modification, leveraging API calls and memory operations to achieve its goals. The structured control flow ensures that the function operates efficiently, responding dynamically to the conditions it encounters.",
+      "Matched Sentence": "This interaction is indicative of potential persistence mechanisms, as it alters values that could influence the behavior of other components or processes.",
+      "Similarity": 0.785669
+    }
+  ],
+  "FUN_10010d15_1": [],
+  "__cfltcvt_init_1": [],
+  "FUN_100110d8_1": [],
+  "FUN_10011202_1": [
+    {
+      "ATT&CK ID": "T1218.011",
+      "Indicator": "Executes a DLL using Rundll32 process: Process \"rundll32.exe\" with commandline \"\"C:\\\\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.dll\",#1\" (UID: 00000000-00005780)",
+      "Comment": "The function initiates its operations by clearing the EAX register and subsequently pushes multiple null values onto the stack, which is a common practice for preparing arguments for a function call. It then invokes a specific function located at the address `0x100111de`. This function call is likely part of a larger sequence of operations, as indicated by its multiple references from other functions, suggesting it plays a critical role in the overall functionality of the program.\n\nThe function's structure is straightforward, primarily consisting of a single call to another function without any complex control flow mechanisms such as loops or conditionals. This indicates that its primary purpose is to execute a specific task rather than to manage multiple states or conditions.\n\nGiven the context of its usage, the function may be involved in initializing or resetting certain parameters within the application, potentially related to memory management or state preparation for subsequent operations. The repeated calls from various other functions imply that it serves as a foundational component, possibly ensuring that the environment is correctly set up for further processing.\n\nOverall, the function's behavior is characterized by its simplicity and its role as a utility in the broader application, focusing on preparing the stack for a subsequent operation without engaging in complex logic or system interactions.",
+      "Matched Sentence": "The function's structure is straightforward, primarily consisting of a single call to another function without any complex control flow mechanisms such as loops or conditionals.",
+      "Similarity": 0.72732
+    }
+  ],
+  "FUN_10011525_1": [],
+  "__wassert_1": [],
+  "__wassert_2": [],
+  "__wassert_3": [],
+  "FUN_100125bb_1": [
+    {
+      "ATT&CK ID": "T1083",
+      "Indicator": "Tries to access non-existent files (executable): \"rundll32.exe\" trying to access non-existent file \"C:\\Windows\\System32\\WOW64LOG.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Windows\\SysWOW64\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\WINDOWS\\SYSTEM32\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Windows\\System\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\WINDOWS\\system\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Windows\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\WINDOWS\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\ProgramData\\Oracle\\Java\\javapath_target_114250\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\ProgramData\\Oracle\\Java\\javapath\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\WINDOWS\\system32\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Windows\\SysWOW64\\wbem\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\WINDOWS\\System32\\Wbem\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Users\\%OSUSER%\\AppData\\Local\\Microsoft\\WindowsApps\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Users\\%OSUSER%\\AppData\\Local\\Microsoft\\WindowsApps\\libcurl.dll\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Program Files\\mitmproxy\\bin\\LIBCURL.DLL\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\Program Files\\mitmproxy\\bin\\libcurl.dll\"",
+      "Comment": "The function initiates its operations by invoking the `CreateFileW` API to open a specific file, which is crucial for its subsequent file manipulation tasks. It checks for the file's existence and handles potential errors gracefully, ensuring that the program can continue running even if the file is not found. If the file is successfully opened, the function proceeds to read its contents using the `ReadFile` API, processing the data in a loop that iterates until all relevant information is extracted.\n\nDuring this process, the function also utilizes `WriteFile` to create or modify another file, effectively implementing a data persistence mechanism. This action suggests an objective of maintaining state or logging information for future reference. Additionally, the function interacts with the Windows Registry through `RegOpenKeyExW` and `RegSetValueExW`, where it writes specific values to designated keys. This interaction indicates an intention to store configuration settings or other critical data that may influence the behavior of the application or system.\n\nThe function's control flow is structured with conditionals that determine the next steps based on the success or failure of API calls, ensuring that it can adapt to different scenarios. It employs loops to manage repeated actions, particularly in reading and processing file data, which highlights its focus on thorough data handling.\n\nOverall, the function exhibits a clear behavioral objective of data persistence and configuration management, leveraging various system resources such as file paths and registry keys to achieve its goals. The combination of file I/O operations and registry interactions underscores its role in modifying the system's state and potentially influencing future executions of the application.",
+      "Matched Sentence": "It checks for the file's existence and handles potential errors gracefully, ensuring that the program can continue running even if the file is not found.",
+      "Similarity": 0.794257
+    }
+  ],
+  "_LocaleUpdate_1": [],
+  "_tolower_1": [
+    {
+      "ATT&CK ID": "T1480",
+      "Indicator": "Creates mutants: \"Local\\SM0:5780:168:WilStaging_02\"",
+      "Comment": "The function performs a series of operations primarily focused on character manipulation, specifically converting a character to its lowercase equivalent. It begins by checking a specific condition in memory, which determines whether the function should proceed with the conversion. If the condition is met, it retrieves the character from the stack and calculates its corresponding lowercase value by adjusting its ASCII code. \n\nThe function utilizes a direct comparison to ascertain if the character falls within a certain range, ensuring that only valid uppercase letters are converted. If the character is outside this range, it simply returns the original character without modification. This behavior is crucial for maintaining data integrity when processing strings.\n\nIn terms of system interactions, the function does not engage with external resources such as files or registry keys, focusing solely on in-memory operations. The control flow is straightforward, employing conditional checks to dictate the path of execution, which enhances efficiency by avoiding unnecessary computations for characters that do not require conversion. Overall, the function is designed to facilitate character case conversion while ensuring that it operates within defined parameters, thereby optimizing performance and reliability.",
+      "Matched Sentence": "If the character is outside this range, it simply returns the original character without modification.",
+      "Similarity": 0.714552
+    }
+  ],
+  "FUN_10013f16_1": [],
+  "_sync_legacy_variables_lk_1": [],
+  "__setlocale_get_all_1": [],
+  "FUN_10014a7e_1": [
+    {
+      "ATT&CK ID": "T1614",
+      "Indicator": "Contains ability to query system locale (API string): Found reference to API \"GetLocaleInfoA\" (Indicator: \"GetLocaleInfo\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetUserDefaultLCID\" (Indicator: \"GetUserDefaultLCID\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetLocaleInfoW\" (Indicator: \"GetLocaleInfo\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"EnumSystemLocalesA\" (Indicator: \"EnumSystemLocales\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function initiates its operations by invoking the `SetLocale` API, which is crucial for configuring the program's locale settings. This call influences how the application handles language-specific data formats, such as date and time representations, number formatting, and string comparisons. The function's primary objective appears to be ensuring that the application operates correctly in the user's specified locale, which is essential for user experience and data accuracy.\n\nIn terms of control flow, the function is structured to first check the current locale settings and then conditionally update them based on the input parameters. This involves a series of conditional statements that determine whether the locale needs to be changed or if the existing settings are sufficient. The function may also include loops that validate the input data, ensuring that only valid locale identifiers are processed.\n\nThe function interacts with system components by potentially modifying registry keys associated with locale settings. This could involve using APIs like `RegSetValueExW` to write new values to the registry, thereby persisting the changes across application sessions. Additionally, it may read from specific registry paths to retrieve the current locale settings, ensuring that the application starts with the correct configuration.\n\nOverall, the function's behavior is centered around configuring locale settings, which involves API calls for setting and retrieving locale information, conditional checks for validating input, and interactions with the Windows registry to ensure persistence of the locale configuration. This functionality is critical for applications that require localization to cater to users in different regions.",
+      "Matched Sentence": "Overall, the function's behavior is centered around configuring locale settings, which involves API calls for setting and retrieving locale information, conditional checks for validating input, and interactions with the Windows registry to ensure persistence of the locale configuration.",
+      "Similarity": 0.840459
+    }
+  ],
+  "FUN_10014a8a_1": [],
+  "FUN_10014abb_1": [],
+  "FUN_10014caf_1": [],
+  "__NMSG_WRITE_1": [],
+  "FUN_1001510b_1": [],
+  "FUN_100152bb_1": [],
+  "FUN_100152c7_1": [],
+  "__mtinit_1": [],
+  "FUN_10015617_1": [],
+  "__initp_eh_hooks_1": [],
+  "FUN_100164d6_1": [],
+  "_malloc_1": [],
+  "FUN_100165a2_1": [],
+  "FUN_10016973_1": [],
+  "FUN_10016a42_1": [],
+  "__cftoe2_l_1": [],
+  "FUN_10018580_1": [
+    {
+      "ATT&CK ID": "T1124",
+      "Indicator": "Contains ability to retrieve machine time (API string): Found reference to API \"GetSystemTimeAsFileTime\" (Indicator: \"GetSystemTime\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetSystemTimeAsFileTime\" (Indicator: \"GetSystemTime\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by invoking the `__tzset_nolock` function, which is typically responsible for setting the time zone information in a thread-safe manner. This indicates that the function may be concerned with time-related data or configurations. \n\nAs it executes, the function likely interacts with various system components, although specific API calls and their parameters are not detailed in the provided snippet. The use of `PUSH` and `CALL` suggests that the function is preparing to pass parameters and execute a subroutine, which may involve manipulating the stack or handling specific data types related to time zones.\n\nThe control flow appears to be straightforward, with a single call to another function and a return statement, indicating that the function's primary role is to delegate its task to `__tzset_nolock` and then return control to the caller. This suggests a focus on ensuring that the time zone settings are correctly established before proceeding with any further operations.\n\nOverall, the function's behavior centers on configuring or retrieving time zone settings, potentially as a preparatory step for subsequent operations that depend on accurate time data. The interaction with `__tzset_nolock` highlights its reliance on system-level time management functionalities, which may be critical for applications that require precise timing or scheduling capabilities.",
+      "Matched Sentence": "The function initiates its operations by invoking the `__tzset_nolock` function, which is typically responsible for setting the time zone information in a thread-safe manner.",
+      "Similarity": 0.756413
+    },
+    {
+      "ATT&CK ID": "T1029",
+      "Indicator": "Contains ability to perform scheduled transfer (API string): Found reference to API \"GetSystemTimeAsFileTime\" (Indicator: \"GetSystemTime\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetSystemTimeAsFileTime\" (Indicator: \"GetSystemTime\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by invoking the `__tzset_nolock` function, which is typically responsible for setting the time zone information in a thread-safe manner. This indicates that the function may be concerned with time-related data or configurations. \n\nAs it executes, the function likely interacts with various system components, although specific API calls and their parameters are not detailed in the provided snippet. The use of `PUSH` and `CALL` suggests that the function is preparing to pass parameters and execute a subroutine, which may involve manipulating the stack or handling specific data types related to time zones.\n\nThe control flow appears to be straightforward, with a single call to another function and a return statement, indicating that the function's primary role is to delegate its task to `__tzset_nolock` and then return control to the caller. This suggests a focus on ensuring that the time zone settings are correctly established before proceeding with any further operations.\n\nOverall, the function's behavior centers on configuring or retrieving time zone settings, potentially as a preparatory step for subsequent operations that depend on accurate time data. The interaction with `__tzset_nolock` highlights its reliance on system-level time management functionalities, which may be critical for applications that require precise timing or scheduling capabilities.",
+      "Matched Sentence": "This indicates that the function may be concerned with time-related data or configurations.",
+      "Similarity": 0.787077
+    },
+    {
+      "ATT&CK ID": "T1124",
+      "Indicator": "Contains ability to retrieve machine timezone (API string): Found reference to API \"GetTimeZoneInformation\" (Indicator: \"GetTimeZoneInformation\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function initiates its operations by invoking the `__tzset_nolock` function, which is typically responsible for setting the time zone information in a thread-safe manner. This indicates that the function may be concerned with time-related data or configurations. \n\nAs it executes, the function likely interacts with various system components, although specific API calls and their parameters are not detailed in the provided snippet. The use of `PUSH` and `CALL` suggests that the function is preparing to pass parameters and execute a subroutine, which may involve manipulating the stack or handling specific data types related to time zones.\n\nThe control flow appears to be straightforward, with a single call to another function and a return statement, indicating that the function's primary role is to delegate its task to `__tzset_nolock` and then return control to the caller. This suggests a focus on ensuring that the time zone settings are correctly established before proceeding with any further operations.\n\nOverall, the function's behavior centers on configuring or retrieving time zone settings, potentially as a preparatory step for subsequent operations that depend on accurate time data. The interaction with `__tzset_nolock` highlights its reliance on system-level time management functionalities, which may be critical for applications that require precise timing or scheduling capabilities.",
+      "Matched Sentence": "Overall, the function's behavior centers on configuring or retrieving time zone settings, potentially as a preparatory step for subsequent operations that depend on accurate time data.",
+      "Similarity": 0.84284
+    }
+  ],
+  "FUN_100189f9_1": [],
+  "FUN_10018a3a_1": [],
+  "FUN_10018d1b_1": [],
+  "FUN_10018d21_1": [],
+  "FUN_10018d27_1": [],
+  "FUN_10018d2d_1": [],
+  "FUN_10018eea_1": [],
+  "__output_l_1": [],
+  "__output_l_2": [
+    {
+      "ATT&CK ID": "T1083",
+      "Indicator": "Touches files: \"rundll32.exe\" trying to touch file \"C:\\Windows\\System32\\WOW64LOG.DLL\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\apphelp.dll\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\rundll32.exe\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\ntdll.dll\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\kernel32.dll\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\KernelBase.dll\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\apppatch\\sysmain.sdb\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\AcLayers.dll\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\mpr.dll\"\n \"rundll32.exe\" trying to touch file \"C:\\Windows\\SysWOW64\\sfc.dll\"",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data structures and interacting with system resources, particularly through API calls. It begins by allocating memory and initializing variables, which sets the stage for its subsequent actions. The function utilizes several API calls, including `CreateFileW` and `RegSetValueExW`, to interact with the file system and the Windows registry, respectively. These calls are crucial for creating or modifying files and registry entries, which may be indicative of persistence mechanisms or configuration changes.\n\nThroughout its execution, the function employs a complex control flow that includes multiple loops and conditional statements. This structure allows it to process data iteratively, checking specific conditions to determine the next steps. For instance, it evaluates the results of previous operations to decide whether to continue processing or to exit early, which suggests a focus on efficiency and error handling.\n\nIn terms of behavioral patterns, the function exhibits characteristics typical of data manipulation and system interaction. It appears to handle file I/O operations, potentially reading from or writing to specific file paths, and may also involve registry modifications that could affect system behavior or application settings. The presence of specific strings and values within the function indicates that it may be designed to interact with particular system components or configurations, further emphasizing its role in system-level operations.\n\nOverall, the function's behavior is characterized by its systematic approach to resource management, data processing, and interaction with the operating system, suggesting objectives related to persistence, configuration management, or data manipulation.",
+      "Matched Sentence": "These calls are crucial for creating or modifying files and registry entries, which may be indicative of persistence mechanisms or configuration changes.",
+      "Similarity": 0.809594
+    }
+  ],
+  "__output_l_3": [],
+  "__output_l_4": [],
+  "FUN_10019dd3_1": [],
+  "FUN_10019e3b_1": [],
+  "FUN_10019e44_1": [],
+  "FUN_1001a043_1": [],
+  "_fastcopy_I_1": [],
+  "FUN_1001a492_1": [],
+  "FUN_1001a4c1_1": [],
+  "FUN_1001a513_1": [],
+  "FUN_1001a5b0_1": [],
+  "FUN_1001a6ae_1": [
+    {
+      "ATT&CK ID": "T1083",
+      "Indicator": "Tries to access non-existent files (non-executable): \"rundll32.exe\" trying to access non-existent file \"C:\\AA34ECB2922CE8A8066358A1D0CE0FF632297037F8B528E3A37CD53477877E47.DLL.MANIFEST\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.dll.manifest\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\AA34ECB2922CE8A8066358A1D0CE0FF632297037F8B528E3A37CD53477877E47.DLL.123.MANIFEST\"\n \"rundll32.exe\" trying to access non-existent file \"C:\\AA34ECB2922CE8A8066358A1D0CE0FF632297037F8B528E3A37CD53477877E47.DLL.124.MANIFEST\"",
+      "Comment": "The function initiates its operations by invoking the `CreateFileW` API to open a specific file, which is determined by a predefined file path. This file is likely used for logging or configuration purposes, as the function subsequently checks for its existence and reads its contents. If the file is not found, the function may create it, indicating a behavior aimed at persistence or data storage.\n\nFollowing the file operations, the function employs `ReadFile` to extract data from the opened file, processing this data through a series of conditional checks. These checks dictate the flow of execution, allowing the function to branch into different paths based on the content read. This control flow is crucial for determining the subsequent actions, which may include modifying system settings or performing additional file operations.\n\nIn addition to file interactions, the function makes use of the `RegSetValueExW` API to write specific values to the Windows Registry. This action suggests an intention to establish persistence or to configure system behavior, as it modifies registry keys that could influence application startup or settings.\n\nThroughout its execution, the function also handles various error conditions, ensuring that it can gracefully manage scenarios where files or registry keys are inaccessible. This robustness indicates a design focused on maintaining functionality even in adverse conditions.\n\nOverall, the function demonstrates a clear objective of establishing persistence through file and registry manipulations, utilizing key Windows APIs to interact with the file system and the registry effectively. The structured control flow allows it to adapt its behavior based on the data it processes, ensuring that it can achieve its goals under varying circumstances.",
+      "Matched Sentence": "Throughout its execution, the function also handles various error conditions, ensuring that it can gracefully manage scenarios where files or registry keys are inaccessible.",
+      "Similarity": 0.797594
+    }
+  ],
+  "FUN_1001a6b8_1": [],
+  "__unlock_file2_1": [],
+  "___get_sigabrt_1": [],
+  "FUN_1001aa01_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to create/open files (API string): Found reference to API \"CreateFileA\" (Indicator: \"CreateFile\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"CreateFileW\" (Indicator: \"CreateFile\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by checking a specific condition stored in a local variable. If this condition evaluates to false, it proceeds to execute a series of actions aimed at interacting with the system. It utilizes the `CreateFileW` API to open or create a file, specifying a path that is likely predetermined or constructed based on certain parameters. This file operation is crucial for the function's objective, which may involve data logging or configuration storage.\n\nFollowing the file operation, the function employs `WriteFile` to write data to the opened file, indicating a focus on data persistence. The data being written could be configuration settings or logs, which suggests that the function is designed to maintain state or record information for future reference. The use of `CloseHandle` at the end of the file operations ensures that system resources are properly released, highlighting a concern for resource management.\n\nIn addition to file interactions, the function may also manipulate registry settings using `RegSetValueExW`. This interaction typically involves creating or modifying registry keys that could be used for application settings or persistence mechanisms. The specific registry keys and values involved are not detailed, but their manipulation indicates an intention to influence system behavior or maintain a presence on the system.\n\nOverall, the function exhibits a clear behavioral objective of data persistence through file and registry interactions, utilizing specific API calls to achieve its goals while ensuring proper management of system resources.",
+      "Matched Sentence": "It utilizes the `CreateFileW` API to open or create a file, specifying a path that is likely predetermined or constructed based on certain parameters.",
+      "Similarity": 0.849891
+    }
+  ],
+  "__assert_1": [],
+  "__assert_2": [
+    {
+      "ATT&CK ID": "T1055",
+      "Indicator": "Contains ability to inject code into another process (API string): Found reference to API \"VirtualFree\" (Indicator: \"VirtualFree\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"VirtualAlloc\" (Indicator: \"VirtualAlloc\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function performs a series of operations primarily focused on memory management and system resource interaction, utilizing various API calls to achieve its objectives. It begins by allocating memory and checking the validity of pointers through calls to `0x1001b63c`, which appears to validate or retrieve data from a specific memory location. If the checks fail, it invokes `0x100110e2`, likely a logging or error handling function, to manage the failure state.\n\nThe function exhibits a structured control flow with multiple conditional checks and loops that dictate its behavior based on the results of previous operations. It utilizes a combination of `TEST` and `CMP` instructions to evaluate conditions, leading to different execution paths depending on the outcomes. This branching logic is crucial for determining how the function interacts with system resources and handles errors.\n\nThroughout its execution, the function interacts with specific memory addresses and constants, suggesting it may be manipulating or monitoring certain data structures. It also makes repeated calls to `0x10013af0`, which seems to be involved in further processing of the data retrieved or validated earlier. The function's behavior indicates a focus on ensuring data integrity and possibly preparing data for further operations, such as writing to files or communicating with other system components.\n\nIn summary, the function is designed to manage memory and validate data through a series of API calls, with a robust control flow that allows it to handle various conditions and errors effectively. Its interactions with system resources are characterized by careful checks and balances, ensuring that operations proceed only when the necessary conditions are met.",
+      "Matched Sentence": "It begins by allocating memory and checking the validity of pointers through calls to `0x1001b63c`, which appears to validate or retrieve data from a specific memory location.",
+      "Similarity": 0.801252
+    }
+  ],
+  "@_EH4_GlobalUnwind@4_1": [],
+  "FUN_1001c13e_1": [
+    {
+      "ATT&CK ID": "T1012",
+      "Indicator": "Opens registry keys: \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SYSTEM\\CONTROLSET001\\CONTROL\\SESSION MANAGER\\SEGMENT HEAP\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SYSTEM\\CONTROLSET001\\CONTROL\\SESSION MANAGER\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WOW64\\X86\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SYSTEM\\CONTROLSET001\\CONTROL\\SAFEBOOT\\OPTION\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SYSTEM\\CONTROLSET001\\CONTROL\\SRP\\GP\\DLL\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SOFTWARE\\POLICIES\\MICROSOFT\\WINDOWS\\SAFER\\CODEIDENTIFIERS\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKCU\\SOFTWARE\\POLICIES\\MICROSOFT\\WINDOWS\\SAFER\\CODEIDENTIFIERS\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SYSTEM\\CONTROLSET001\\CONTROL\\FILESYSTEM\"; Key: \"\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"OPEN\"; Path: \"HKLM\\SOFTWARE\\WOW6432NODE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\APPCOMPATFLAGS\"; Key: \"\"; Value: \"\")",
+      "Comment": "The function performs a series of operations aimed at modifying system settings and potentially establishing persistence. It begins by utilizing the `RegOpenKeyExW` API to access a specific registry key, which is likely related to application settings or system configurations. Following this, it employs `RegSetValueExW` to write a value to the registry, indicating an intention to alter system behavior or maintain a presence on the system.\n\nIn addition to registry modifications, the function interacts with the file system through `CreateFileW`, where it opens or creates a file at a designated path. This file operation suggests that the function may be logging information or storing configuration data. The path used for the file is critical, as it may indicate the function's target for data persistence or exfiltration.\n\nThe control flow of the function includes conditional checks that determine whether certain operations should be executed, which indicates a level of decision-making based on the current state of the system or the presence of specific conditions. This could involve checking for existing values in the registry or the existence of files before proceeding with modifications.\n\nOverall, the function's behavior is characterized by its interactions with the Windows registry and file system, aiming to establish persistence and potentially modify system settings to influence future operations. The use of specific API calls highlights its focus on system-level changes, which could have implications for security and stability.",
+      "Matched Sentence": "It begins by utilizing the `RegOpenKeyExW` API to access a specific registry key, which is likely related to application settings or system configurations.",
+      "Similarity": 0.853239
+    }
+  ],
+  "__setmbcp_nolock_1": [],
+  "FUN_1001c4cd_1": [],
+  "___initmbctable_1": [],
+  "___strgtold12_l_1": [],
+  "___strgtold12_l_2": [],
+  "___strgtold12_l_3": [
+    {
+      "ATT&CK ID": "T1140",
+      "Indicator": "Shows ability to deobfuscate/decode files or information: The analysis shows use of encryption and can be used to decode file or information. Matched sigs: Contains XOR operation loops [Stream disassembly]",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data and interacting with system memory. It begins by initializing several local variables and setting up a control flow that includes conditional checks and loops to process data iteratively. The function utilizes bitwise operations and arithmetic calculations to transform input values, which are likely related to numerical data processing.\n\nKey system interactions include the use of memory allocation and manipulation techniques, where it reads and writes to specific memory addresses. The function appears to handle data in a structured format, possibly for the purpose of encoding or decoding information. It also checks conditions that influence the flow of execution, ensuring that certain criteria are met before proceeding with further operations.\n\nThroughout its execution, the function modifies values stored in memory, which may correspond to specific data structures or buffers. The final output of the function is likely a transformed representation of the input data, which could be used for subsequent processing or storage. Overall, the function exhibits a behavior pattern focused on data transformation and memory management, indicative of operations that may be involved in cryptographic or encoding tasks.",
+      "Matched Sentence": "Overall, the function exhibits a behavior pattern focused on data transformation and memory management, indicative of operations that may be involved in cryptographic or encoding tasks.",
+      "Similarity": 0.822159
+    }
+  ],
+  "FUN_1001e460_1": [],
+  "FUN_1001e5c6_1": [],
+  "__recalloc_1": [],
+  "_LangCountryEnumProc@4_1": [],
+  "_memcmp_1": [
+    {
+      "ATT&CK ID": "T1027",
+      "Indicator": "Matched Compiler/Packer signature (DIE): \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\" was detected as \"EP:Microsoft Visual C/C++\"  and name: \"Compiler\"\n \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\" was detected as \"Microsoft Visual C/C++\"  and name: \"Compiler\"\n \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\" was detected as \"Microsoft Linker\"  and name: \"Linker\"",
+      "Comment": "The function performs a byte-by-byte comparison of two memory blocks, effectively implementing a custom version of the `memcmp` function. It begins by checking the size of the data to be compared, ensuring that it is greater than zero before proceeding. The function utilizes a series of conditional checks and loops to iterate through the bytes of the two memory areas, comparing them one at a time.\n\nDuring the comparison, the function retrieves bytes from both memory locations using offsets and performs subtraction to determine if they are equal. If a difference is found, it sets a flag indicating the result of the comparison. The function employs a series of conditional jumps to handle the logic of determining which memory block is greater or if they are equal, ultimately returning a value that indicates the result of the comparison.\n\nKey system components involved include direct memory access, where the function reads from the specified memory addresses, and the use of registers to store intermediate results and control flow. The function does not interact with external resources such as files or the registry, focusing solely on in-memory data comparison. The overall behavior is centered on efficiently determining the relationship between two blocks of memory, which is a common operation in various applications, particularly in data processing and manipulation tasks.",
+      "Matched Sentence": "If a difference is found, it sets a flag indicating the result of the comparison.",
+      "Similarity": 0.726711
+    }
+  ],
+  "_memcmp_2": [],
+  "_memcmp_3": [],
+  "_memcmp_4": [],
+  "_memcmp_5": [],
+  "_memcmp_6": [],
+  "_memcmp_7": [],
+  "_memcmp_8": [],
+  "__global_unwind2_1": [],
+  "FUN_10021750_1": [],
+  "_has_osfxsr_set_1": [],
+  "FUN_10021810_1": [],
+  "FUN_10022116_1": [],
+  "__write_nolock_1": [],
+  "__write_nolock_2": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to retrieve address of exported function from a DLL (API string): Found reference to API \"GetProcAddress\" (Indicator: \"GetProcAddress\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetProcAddress\" (Indicator: \"GetProcAddress\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations primarily focused on manipulating data in memory and interacting with system resources through various API calls. It begins by initializing several local variables and setting up a loop structure that processes data based on specific conditions. The function utilizes memory allocation and manipulation techniques, likely to handle buffers or data structures.\n\nKey API calls are made to manage memory and perform operations on data. For instance, it appears to call a function related to file operations, indicated by the use of `CALL dword ptr [0x1002a0a0]`, which suggests interaction with file or data streams. The function checks conditions frequently, using comparisons to determine the flow of execution, which indicates a robust control structure designed to handle various scenarios based on the data being processed.\n\nThe function also seems to be involved in data transformation or encoding, as evidenced by the manipulation of byte values and the presence of specific constants like `0xd` and `0xa`, which may relate to formatting or control characters. Additionally, it appears to handle potential errors or exceptional cases, as it includes checks that redirect the flow based on the success or failure of previous operations.\n\nOverall, the function exhibits a complex behavior pattern that includes data processing, memory management, and conditional execution, all of which are critical for its intended operations, likely related to file handling or data encoding tasks. The interactions with system resources suggest a focus on ensuring data integrity and proper handling of input/output operations.",
+      "Matched Sentence": "For instance, it appears to call a function related to file operations, indicated by the use of `CALL dword ptr [0x1002a0a0]`, which suggests interaction with file or data streams.",
+      "Similarity": 0.8254
+    }
+  ],
+  "FUN_100227b8_1": [],
+  "__get_printf_count_output_1": [
+    {
+      "ATT&CK ID": "T1105",
+      "Indicator": "Contains ability to write files (API string): Found reference to API \"WriteFile\" (Indicator: \"WriteFile\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function performs a series of operations primarily focused on interacting with the file system and the Windows registry to achieve its objectives. It begins by utilizing the `CreateFileW` API to open or create a file at a specified path, which is crucial for its file I/O operations. This file path is likely determined by a combination of hardcoded strings and dynamic values, indicating a potential for configuration or data storage.\n\nOnce the file is successfully accessed, the function may write data to it using the `WriteFile` API, suggesting that it is either logging information or storing some form of output. The function also checks for specific conditions, likely to determine whether to proceed with writing or to handle errors appropriately, indicating a structured control flow with conditional checks.\n\nIn addition to file operations, the function interacts with the Windows registry, employing `RegSetValueExW` to create or modify registry keys and values. This interaction is often associated with persistence mechanisms, allowing the function to ensure its settings or state are retained across system reboots. The registry keys involved may pertain to application settings or system configurations, further emphasizing the function's role in establishing a foothold within the system.\n\nThroughout its execution, the function exhibits a clear behavioral pattern of establishing persistence and potentially exfiltrating or logging data, as evidenced by its file and registry interactions. The use of specific strings and paths suggests that it may be tailored to operate within a particular environment or to target specific data, enhancing its effectiveness in achieving its objectives. Overall, the function's design reflects a methodical approach to system interaction, leveraging both file and registry manipulations to fulfill its intended purpose.",
+      "Matched Sentence": "Once the file is successfully accessed, the function may write data to it using the `WriteFile` API, suggesting that it is either logging information or storing some form of output.",
+      "Similarity": 0.852829
+    }
+  ],
+  "FUN_10022a95_1": [],
+  "FUN_10023523_1": [],
+  "FUN_1002388e_1": [],
+  "FID_conflict_2": [],
+  "_$I10_OUTPUT_1": [],
+  "_$I10_OUTPUT_2": [],
+  "_$I10_OUTPUT_3": [],
+  "_$I10_OUTPUT_4": [],
+  "___initconout_1": [],
+  "KERNEL32.DLL_1": [
+    {
+      "ATT&CK ID": "T1083",
+      "Indicator": "Reads files: \"rundll32.exe\" reads file \"c:\\windows\\fonts\\staticcache.dat\"",
+      "Comment": "The function initiates its operations by utilizing the `CreateFileW` API to open a specific file located at a predetermined path, which is crucial for its subsequent actions. This file is likely used for configuration or data storage, indicating the function's intent to read or modify its contents. Following the file access, the function employs `ReadFile` to extract data from the opened file, demonstrating a clear pattern of file I/O operations aimed at retrieving necessary information for further processing.\n\nIn addition to file interactions, the function makes use of the `RegSetValueExW` API to write specific values to the Windows Registry. This action suggests an objective of persistence, as it may be setting configuration parameters or flags that ensure the function's behavior is retained across system reboots. The registry keys targeted are indicative of the function's integration with the system, potentially affecting startup behavior or application settings.\n\nThe control flow of the function is structured with conditionals that dictate the execution path based on the success or failure of previous operations. For instance, if the file is successfully opened and read, the function proceeds to execute additional logic, which may include further modifications to the file or registry. Conversely, failure to access the file leads to alternative handling, showcasing a robust error management strategy.\n\nOverall, the function exhibits a clear behavioral objective of establishing persistence through registry modifications and performing file I/O operations to manage configuration data. Its interactions with system components, particularly through API calls like `CreateFileW` and `RegSetValueExW`, highlight its role in manipulating system settings and ensuring its continued presence within the operating environment.",
+      "Matched Sentence": "For instance, if the file is successfully opened and read, the function proceeds to execute additional logic, which may include further modifications to the file or registry.",
+      "Similarity": 0.805122
+    }
+  ],
+  "Unwind@10026b80_1": [],
+  "Unwind@10026bb0_1": [],
+  "Unwind@10026be0_1": [],
+  "Unwind@10026c10_1": [],
+  "Unwind@10026c40_1": [],
+  "Unwind@10026c70_1": [],
+  "Unwind@10026ca0_1": [],
+  "Unwind@10026cd0_1": [],
+  "Unwind@10026d00_1": [],
+  "Unwind@10026d30_1": [],
+  "Unwind@10026d60_1": [],
+  "Unwind@10026d90_1": [],
+  "Unwind@10026e00_1": [],
+  "Unwind@10026e30_1": [],
+  "Unwind@10026e60_1": [],
+  "Unwind@10026e90_1": [],
+  "Unwind@10026ec0_1": [],
+  "Unwind@10026ef0_1": [],
+  "Unwind@10026f20_1": [],
+  "Unwind@10026f50_1": [],
+  "Unwind@10026f5b_1": [],
+  "Unwind@10026ff0_1": [],
+  "Unwind@10027020_1": [],
+  "Unwind@10027028_1": [],
+  "Unwind@10027050_1": [],
+  "Unwind@10027058_1": [],
+  "Unwind@10027080_1": [],
+  "Unwind@10027088_1": [],
+  "Unwind@10027093_1": [],
+  "Unwind@1002709e_1": [],
+  "Unwind@100270a9_1": [],
+  "Unwind@100270d0_1": [],
+  "Unwind@100270d8_1": [],
+  "Unwind@100270e3_1": [],
+  "Unwind@100270ee_1": [
+    {
+      "ATT&CK ID": "T1082",
+      "Indicator": "Contains ability to retrieve information about the current system (API string): Found reference to API \"GetUserObjectInformationW\" (Indicator: \"GetUserObjectInformation\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetUserObjectInformationA\" (Indicator: \"GetUserObjectInformation\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"NtQuerySystemInformation\" (Indicator: \"QuerySystemInformation\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API \"RtlNtStatusToDosError\" (Indicator: \"RtlNtStatusToDosError\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for performing various system-level tasks. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely critical for the function's objectives, possibly serving as a location for logging or storing data.\n\nFollowing the file operations, the function employs `WriteFile` to write data to the opened file, suggesting a behavior aimed at data persistence or logging. The function also checks for specific conditions using control structures, which may involve loops or conditionals that dictate whether certain actions are taken based on the state of the system or the data being processed.\n\nIn addition to file interactions, the function may modify registry settings using `RegSetValueExW`, which indicates an intention to alter system configurations or maintain persistence through registry entries. The specific registry keys and values targeted by this function are crucial for understanding its long-term impact on the system.\n\nOverall, the function exhibits a clear pattern of file I/O operations combined with potential registry modifications, suggesting objectives related to data persistence and system configuration changes. The interactions with system components are structured to ensure that the function can effectively log information and possibly maintain its presence on the system through registry alterations.",
+      "Matched Sentence": "The interactions with system components are structured to ensure that the function can effectively log information and possibly maintain its presence on the system through registry alterations.",
+      "Similarity": 0.778842
+    }
+  ],
+  "Unwind@100270f9_1": [],
+  "Unwind@10027104_1": [],
+  "Unwind@10027112_1": [],
+  "Unwind@10027120_1": [],
+  "Unwind@1002712e_1": [],
+  "Unwind@1002713c_1": [],
+  "Unwind@1002714a_1": [],
+  "Unwind@10027180_1": [],
+  "Unwind@10027188_1": [],
+  "Unwind@100271b0_1": [],
+  "Unwind@100271b8_1": [],
+  "Unwind@100271e0_1": [],
+  "Unwind@10027210_1": [],
+  "Unwind@10027260_1": [],
+  "Unwind@10027290_1": [],
+  "Unwind@100272c0_1": [],
+  "Unwind@100272f0_1": [],
+  "Unwind@100272f8_1": [],
+  "Unwind@10027320_1": [],
+  "Unwind@10027350_1": [],
+  "Unwind@10027380_1": [],
+  "Unwind@100273b0_1": [],
+  "Unwind@100273e0_1": [],
+  "Unwind@10027410_1": [],
+  "Unwind@10027440_1": [],
+  "Unwind@10027448_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to execute Windows APIs: Found reference to API (Indicator: \"GetVersionExA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FreeEnvironmentStringsW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"HeapCreate\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetStringTypeA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"RaiseException\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"WriteConsoleW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"CompareStringA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"CloseHandle\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetTimeZoneInformation\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetLocaleInfoA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"HeapAlloc\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"CompareStringW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetCommandLineA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetStdHandle\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetCurrentThreadId\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"IsValidLocale\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"SetLastError\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"DeleteCriticalSection\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FreeEnvironmentStringsA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetACP\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetConsoleCP\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"UnhandledExceptionFilter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"HeapReAlloc\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"HeapFree\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"IsDebuggerPresent\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"HeapSize\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"IsValidCodePage\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"WideCharToMultiByte\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"EnterCriticalSection\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetCurrentProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetModuleFileNameA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"OutputDebugStringA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"TlsSetValue\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetProcAddress\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"SetFilePointer\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"InitializeCriticalSection\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"TlsFree\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"TerminateProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetEnvironmentStringsW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetFileType\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"LeaveCriticalSection\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"HeapDestroy\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"TlsGetValue\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"ExitProcess\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetOEMCP\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetLastError\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"MultiByteToWideChar\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"VirtualFree\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"SetHandleCount\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetCurrentProcessId\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"SetStdHandle\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"RtlUnwind\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FlushFileBuffers\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetConsoleOutputCP\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetStringTypeW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"TlsAlloc\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetUserDefaultLCID\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetSystemTimeAsFileTime\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"WriteConsoleA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"SetUnhandledExceptionFilter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"DebugBreak\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"LCMapStringA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"VirtualAlloc\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"InterlockedIncrement\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"QueryPerformanceCounter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetModuleHandleA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"WriteFile\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetConsoleMode\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetCPInfo\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetLocaleInfoW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetTickCount\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"EnumSystemLocalesA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetEnvironmentStrings\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"CreateFileA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetStartupInfoA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"SetEnvironmentVariableA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetProcessHeap\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetModuleFileNameW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"LCMapStringW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"Sleep\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"LoadLibraryA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"LoadLibraryW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"InterlockedDecrement\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"inet_ntoa\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"EncodePointer\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"DecodePointer\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FlsFree\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FlsSetValue\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FlsGetValue\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"FlsAlloc\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetProcessWindowStation\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetUserObjectInformationW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetLastActivePopup\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetActiveWindow\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"MessageBoxW\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"GetUserObjectInformationA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"MessageBoxA\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"InitializeCriticalSectionAndSpinCount\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API (Indicator: \"InitializeConditionVariable\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"SleepConditionVariableCS\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"WakeAllConditionVariable\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"RtlDllShutdownInProgress\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"MessageBoxW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"LoadIconW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"TranslateMessage\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"DispatchMessageW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"RegisterClassW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"DestroyWindow\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"CreateWindowExW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"GetWindow\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"DefWindowProcW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"LoadCursorW\"; Source: \"00000000-00005780.00000000.174319.008B1000.00000020.mdmp\")\n Found reference to API (Indicator: \"ReadFile\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetModuleFileNameA\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"IsWow64Process2\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CreateSemaphoreExW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"HeapFree\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SetLastError\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetCommandLineW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetCurrentProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ReleaseSemaphore\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetModuleHandleExW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetSystemWow64Directory2W\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CoUninitialize\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CoCreateInstance\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"EncodePointer\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SetErrorMode\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SetFilePointer\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"WaitForSingleObject\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"LocalAlloc\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CreateFileW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetCurrentThreadId\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ReleaseMutex\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetSystemDirectoryW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SetProcessMitigationPolicy\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CreateEventW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"FormatMessageW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CoInitializeSecurity\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetLastError\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"AttachConsole\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ReleaseSRWLockExclusive\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"OutputDebugStringW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SetEvent\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"AcquireSRWLockExclusive\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"WaitForSingleObjectEx\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"OpenSemaphoreW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CloseHandle\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ReleaseSRWLockShared\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"FreeConsole\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"HeapSetInformation\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"HeapAlloc\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"LoadStringW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"DecodePointer\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"WriteConsoleW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetProcAddress\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CreateMutexExW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"LocalFree\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"AcquireSRWLockShared\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CLSIDFromString\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ExitProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetCurrentProcessId\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetProcessHeap\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CreateProcessW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetModuleHandleW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"FreeLibrary\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"WideCharToMultiByte\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CoInitializeEx\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"DebugBreak\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"LoadLibraryExW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"IsDebuggerPresent\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"Sleep\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetStartupInfoW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"EnterCriticalSection\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"LeaveCriticalSection\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"DeleteCriticalSection\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ResetEvent\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"UnhandledExceptionFilter\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SetUnhandledExceptionFilter\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"TerminateProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"QueryPerformanceCounter\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetSystemTimeAsFileTime\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetTickCount\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"InitializeCriticalSectionAndSpinCount\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"IsProcessorFeaturePresent\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"SearchPathW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CompareStringW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"GetFileAttributesW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CharNextW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"Wow64EnableWow64FsRedirection\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"CreateActCtxW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ActivateActCtx\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"DeactivateActCtx\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"ReleaseActCtx\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"QueryActCtxW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"PathIsRelativeW\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"NtQuerySystemInformation\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"RtlImageNtHeader\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"NtSetInformationProcess\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"NtQueryInformationToken\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"RtlNtStatusToDosError\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"NtOpenProcessToken\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"NtClose\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")\n Found reference to API (Indicator: \"DelayLoadFailureHook\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for accessing core Windows API functionalities. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely constructed based on certain conditions evaluated earlier in the function, suggesting a tailored approach to file handling.\n\nFollowing the file operation, the function employs `WriteFile` to write data to the opened file, which may involve logging or storing specific information. The data being written could be critical for persistence or data exfiltration objectives, as it appears to be structured to ensure that the information is retained across sessions.\n\nIn addition to file operations, the function interacts with the Windows Registry using `RegSetValueExW`. This API call is used to create or modify registry keys and values, which can be indicative of attempts to establish persistence or configure system settings. The specific registry keys targeted by this function are not detailed, but their modification could affect system behavior or application settings.\n\nThe control flow of the function is structured with conditionals that determine the execution path based on the success or failure of previous operations. This includes checks to ensure that file and registry operations are completed successfully before proceeding, which highlights a robust error-handling mechanism.\n\nOverall, the function demonstrates a clear intent to manipulate system resources through file and registry interactions, potentially for purposes such as data storage, persistence, or configuration changes. The combination of API calls and control structures indicates a methodical approach to achieving its objectives within the Windows environment.",
+      "Matched Sentence": "The combination of API calls and control structures indicates a methodical approach to achieving its objectives within the Windows environment.",
+      "Similarity": 0.813906
+    }
+  ],
+  "Unwind@10027470_1": [],
+  "Unwind@100274a0_1": [],
+  "Unwind@100274d0_1": [],
+  "Unwind@10027550_1": [],
+  "Unwind@10027558_1": [],
+  "Unwind@10027563_1": [],
+  "Unwind@1002756e_1": [],
+  "Unwind@10027579_1": [],
+  "Unwind@10027584_1": [],
+  "Unwind@10027592_1": [],
+  "Unwind@100275a0_1": [],
+  "Unwind@100275ae_1": [],
+  "Unwind@100275bc_1": [],
+  "Unwind@100275ca_1": [],
+  "Unwind@10027640_1": [],
+  "Unwind@10027670_1": [],
+  "Unwind@10027678_1": [],
+  "Unwind@100276a0_1": [],
+  "Unwind@100276e0_1": [],
+  "Unwind@10027720_1": [],
+  "Unwind@10027728_1": [],
+  "Unwind@10027750_1": [],
+  "Unwind@10027790_1": [],
+  "Unwind@10027798_1": [],
+  "Unwind@100277c0_1": [],
+  "Unwind@100277c8_1": [],
+  "Unwind@100277d3_1": [],
+  "Unwind@100277de_1": [],
+  "Unwind@100277e9_1": [],
+  "Unwind@100277f4_1": [],
+  "Unwind@10027820_1": [],
+  "Unwind@10027828_1": [],
+  "Unwind@10027850_1": [],
+  "Unwind@1002785b_1": [],
+  "Unwind@100278a0_1": [],
+  "Unwind@100278a8_1": [],
+  "Unwind@100278d0_1": [],
+  "Unwind@10027900_1": [],
+  "Unwind@10027908_1": [],
+  "Unwind@10027910_1": [],
+  "Unwind@10027940_1": [],
+  "Unwind@100279c0_1": [],
+  "Unwind@100279f0_1": [],
+  "Unwind@10027a20_1": [],
+  "Unwind@10027a50_1": [],
+  "Unwind@10027a80_1": [],
+  "Unwind@10027ab0_1": [],
+  "Unwind@10027af0_1": [
+    {
+      "ATT&CK ID": "T1112",
+      "Indicator": "Writes registry keys: \"rundll32.exe\" (Access type: \"SETVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\NOTIFICATIONS\\DATA\"; Key: \"418A073AA3BC1C75\"; Value: \"461E0000000000000400040001001C00020000000D78790016DDA4001E8D520021777A00259960002C3D81003E3383004AAA8100560A8500726E4A0075A37E00799C39008106950087DE83009D9D9200A736A800B1CE9800B3F1A200BC6EB400C046AD00C36D8100CF74AA00D3E88D00E1C97700E7997F00EBBF8400F1FC6000F7D36F0006000600000019C398001C4452007140A30091508A00A522A400C45F7F00\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for accessing core Windows API functionalities. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely critical for the function's objectives, possibly for logging or data storage purposes.\n\nFollowing the file operations, the function employs `WriteFile` to write data to the opened file, suggesting an intention to persist information or log events. The function also checks for specific conditions using control structures, which may involve loops or conditionals that dictate the flow of execution based on the success of file operations or the presence of certain data.\n\nIn addition to file interactions, the function may modify system settings or configurations by accessing the Windows Registry. It uses `RegSetValueExW` to write values to specific registry keys, which could be aimed at establishing persistence or altering system behavior. The registry keys involved are not explicitly detailed, but their modification indicates a potential for long-term effects on the system.\n\nOverall, the function exhibits a behavior pattern focused on file I/O and registry manipulation, with the primary objectives likely revolving around data persistence and system configuration changes. The combination of these actions suggests a deliberate approach to maintaining a presence on the system or altering its state for future operations.",
+      "Matched Sentence": "It uses `RegSetValueExW` to write values to specific registry keys, which could be aimed at establishing persistence or altering system behavior.",
+      "Similarity": 0.852632
+    }
+  ],
+  "Unwind@10027af8_1": [],
+  "Unwind@10027b40_1": [],
+  "Unwind@10027b48_1": [],
+  "Unwind@10027b53_1": [],
+  "Unwind@10027b5e_1": [
+    {
+      "ATT&CK ID": "T1082",
+      "Indicator": "Contains ability to read software policies: \"rundll32.exe\" (Path: \"HKLM\\SOFTWARE\\POLICIES\\MICROSOFT\\WINDOWS\\SAFER\\CODEIDENTIFIERS\"; Key: \"TRANSPARENTENABLED\")",
+      "Comment": "The function performs a series of operations aimed at establishing persistence and potentially exfiltrating data. It begins by utilizing the `CreateFileW` API to open or create a file at a specified path, which is likely intended for logging or storing configuration data. This file path is dynamically constructed, indicating that the function may adapt its behavior based on the environment or specific conditions.\n\nFollowing the file operations, the function employs `WriteFile` to write data into the opened file, suggesting that it is capturing information that may be relevant for its objectives. The data written could include configuration settings or logs that facilitate its persistence on the system.\n\nIn addition to file interactions, the function interacts with the Windows Registry using `RegSetValueExW`. This API call is used to create or modify registry keys, which is a common technique for establishing persistence. The specific registry keys targeted may relate to application startup or system settings, ensuring that the function is executed upon system boot or user login.\n\nThe control flow of the function includes conditionals that check for specific states or configurations, allowing it to adapt its actions based on the current environment. This dynamic behavior indicates a level of sophistication, as the function can alter its operations depending on the presence of certain files or registry entries.\n\nOverall, the function exhibits a clear intent to maintain a presence on the system through file and registry manipulations, while also potentially gathering and storing data that could be used for further actions or analysis. The combination of file I/O and registry modifications highlights its role in system interactions that are characteristic of persistence mechanisms often employed by malicious software.",
+      "Matched Sentence": "This dynamic behavior indicates a level of sophistication, as the function can alter its operations depending on the presence of certain files or registry entries.",
+      "Similarity": 0.81999
+    }
+  ],
+  "Unwind@10027b69_1": [],
+  "Unwind@10027b74_1": [],
+  "Unwind@10027b82_1": [],
+  "Unwind@10027b90_1": [],
+  "Unwind@10027b9e_1": [],
+  "Unwind@10027bac_1": [],
+  "Unwind@10027bba_1": [],
+  "Unwind@10027bc8_1": [],
+  "Unwind@10027bf0_1": [
+    {
+      "ATT&CK ID": "T1497.001",
+      "Indicator": "Able to identify virtual environment by using API string: Found string \"NtQuerySystemInformation\" (Indicator: \"NtQuerySystemInformation\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for performing various system-level tasks. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely critical for the function's objectives, possibly serving as a location for logging or storing data.\n\nFollowing the file operations, the function employs `WriteFile` to write data to the opened file, suggesting a behavior aimed at data persistence or logging. The function also checks for specific conditions using control structures, which may involve loops or conditionals that dictate the flow of execution based on the success of file operations or the presence of certain data.\n\nIn addition to file interactions, the function may modify registry settings using `RegSetValueExW`, indicating an intention to establish persistence or alter system configurations. The registry keys involved could be related to application settings or system behaviors, further emphasizing the function's potential for system modification.\n\nThroughout its execution, the function appears to focus on ensuring that necessary resources are available and correctly configured, which aligns with objectives such as data exfiltration or maintaining a foothold within the system. The presence of specific strings or artifacts, such as file names or registry keys, may provide additional context for its operational goals, highlighting its interaction with the system's file and registry structures.",
+      "Matched Sentence": "The presence of specific strings or artifacts, such as file names or registry keys, may provide additional context for its operational goals, highlighting its interaction with the system's file and registry structures.",
+      "Similarity": 0.814178
+    }
+  ],
+  "Unwind@10027bf8_1": [],
+  "Unwind@10027c00_1": [],
+  "Unwind@10027c0b_1": [],
+  "Unwind@10027c13_1": [],
+  "Unwind@10027c1e_1": [],
+  "Unwind@10027c26_1": [],
+  "Unwind@10027c2e_1": [],
+  "Unwind@10027c36_1": [],
+  "Unwind@10027c3e_1": [],
+  "Unwind@10027c46_1": [],
+  "Unwind@10027c51_1": [],
+  "Unwind@10027c5c_1": [],
+  "Unwind@10027c64_1": [],
+  "Unwind@10027c6c_1": [],
+  "Unwind@10027c74_1": [],
+  "Unwind@10027c7c_1": [],
+  "Unwind@10027c84_1": [],
+  "Unwind@10027cc0_1": [],
+  "Unwind@10027cf0_1": [],
+  "Unwind@10027cf8_1": [],
+  "Unwind@10027d20_1": [],
+  "Unwind@10027d50_1": [],
+  "Unwind@10027d80_1": [],
+  "Unwind@10027db0_1": [],
+  "Unwind@10027db8_1": [],
+  "Unwind@10027de0_1": [],
+  "Unwind@10027e10_1": [],
+  "Unwind@10027e40_1": [],
+  "Unwind@10027e48_1": [],
+  "Unwind@10027e70_1": [],
+  "Unwind@10027e7b_1": [
+    {
+      "ATT&CK ID": "T1057",
+      "Indicator": "Process launched with changed environment: Process \"rundll32.exe\" (UID: 00000000-00005780) was launched with new environment variables: \"PROCESSOR_ARCHITEW6432=\"AMD64\"\"\n Process \"rundll32.exe\" (UID: 00000000-00005780) was launched with modified environment variables: \"PROCESSOR_ARCHITECTURE, CommonProgramFiles, ProgramFiles\"",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for performing various system-level tasks. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely critical for the function's objectives, possibly serving as a location for data storage or retrieval.\n\nFollowing the file operation, the function employs `WriteFile` to write data to the opened file, suggesting an intent to log information or store results. The data being written may include sensitive information, hinting at potential data exfiltration objectives. Additionally, the function checks for specific conditions using control structures, which may involve loops or conditionals that dictate the flow of execution based on the success of previous operations.\n\nMoreover, the function interacts with the Windows Registry, utilizing `RegSetValueExW` to create or modify registry keys and values. This interaction could be aimed at establishing persistence by ensuring that the function or its components are executed on system startup or during specific events. The registry keys involved may contain configuration settings or indicators of the function's presence on the system.\n\nThroughout its execution, the function demonstrates a clear pattern of file I/O operations, registry modifications, and condition-based control flow, all of which align with objectives such as data persistence and potential data manipulation. The artifacts created or modified during this process, including the files and registry entries, play a significant role in the function's overall behavior and its impact on the system.",
+      "Matched Sentence": "The artifacts created or modified during this process, including the files and registry entries, play a significant role in the function's overall behavior and its impact on the system.",
+      "Similarity": 0.789756
+    }
+  ],
+  "Unwind@10027eb0_1": [],
+  "Unwind@10027ee0_1": [],
+  "Unwind@10027f10_1": [],
+  "Unwind@10027f40_1": [],
+  "Unwind@10027f48_1": [],
+  "Unwind@10027f70_1": [],
+  "Unwind@10027f7b_1": [],
+  "Unwind@10027f86_1": [],
+  "Unwind@10027f91_1": [],
+  "Unwind@10027f9c_1": [],
+  "Unwind@10027fa7_1": [],
+  "Unwind@10027fe0_1": [],
+  "Unwind@10027fe8_1": [],
+  "Unwind@10027ff0_1": [],
+  "Unwind@10027ff8_1": [],
+  "Unwind@10028000_1": [],
+  "Unwind@1002804c_1": [],
+  "Unwind@10028057_1": [],
+  "Unwind@100280a0_1": [],
+  "Unwind@100280a8_1": [],
+  "Unwind@100280b3_1": [],
+  "Unwind@100280be_1": [],
+  "Unwind@100280c6_1": [],
+  "Unwind@100280ce_1": [],
+  "Unwind@100280d9_1": [],
+  "Unwind@100280e4_1": [],
+  "Unwind@100280ec_1": [],
+  "Unwind@100280f7_1": [],
+  "Unwind@10028102_1": [],
+  "Unwind@1002810a_1": [],
+  "Unwind@10028115_1": [],
+  "Unwind@10028120_1": [],
+  "Unwind@10028128_1": [
+    {
+      "ATT&CK ID": "T1622",
+      "Indicator": "Contains ability to register a top-level exception handler (API string): Found reference to API \"UnhandledExceptionFilter\" (Indicator: \"UnhandledExceptionFilter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"SetUnhandledExceptionFilter\" (Indicator: \"SetUnhandledExceptionFilter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"SetUnhandledExceptionFilter\" (Indicator: \"UnhandledExceptionFilter\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for various system-level interactions. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely critical for the function's objectives, possibly serving as a storage location for data or logs.\n\nSubsequently, the function employs `WriteFile` to write data to the opened file, suggesting a behavior aimed at data persistence or logging. The data being written could include configuration settings or operational logs, which are vital for the function's ongoing tasks. Additionally, the function may check for specific conditions using control structures, such as loops or conditionals, to determine whether to continue writing or to close the file.\n\nMoreover, the function interacts with the Windows Registry, utilizing `RegSetValueExW` to create or modify registry keys and values. This interaction indicates an intention to establish persistence or to store configuration data that can be accessed by the system or other applications upon subsequent executions.\n\nThroughout its execution, the function may also handle error conditions, ensuring that any failures in file or registry operations are appropriately managed. This robust error handling is crucial for maintaining stability and reliability in its operations.\n\nIn summary, the function is designed to perform file I/O operations for data persistence, modify registry settings for configuration storage, and implement control flow mechanisms to manage its execution path effectively. These actions suggest a focus on maintaining state and ensuring that necessary data is available for future use, which is indicative of a broader behavioral objective related to system integration and persistence.",
+      "Matched Sentence": "This robust error handling is crucial for maintaining stability and reliability in its operations.",
+      "Similarity": 0.733755
+    }
+  ],
+  "Unwind@10028133_1": [],
+  "Unwind@1002813e_1": [],
+  "Unwind@10028146_1": [],
+  "Unwind@10028151_1": [],
+  "Unwind@1002815c_1": [],
+  "Unwind@10028164_1": [],
+  "Unwind@1002816f_1": [],
+  "Unwind@1002817a_1": [],
+  "Unwind@10028182_1": [],
+  "Unwind@1002818d_1": [],
+  "Unwind@10028198_1": [],
+  "Unwind@100281a3_1": [],
+  "Unwind@100281ab_1": [],
+  "Unwind@100281b6_1": [],
+  "Unwind@100281c1_1": [],
+  "Unwind@100281cc_1": [],
+  "Unwind@100281d7_1": [],
+  "Unwind@100281e2_1": [],
+  "Unwind@100281ed_1": [],
+  "Unwind@100281f8_1": [],
+  "Unwind@10028203_1": [],
+  "Unwind@1002820e_1": [],
+  "Unwind@10028219_1": [],
+  "Unwind@10028224_1": [],
+  "Unwind@1002822c_1": [],
+  "Unwind@10028237_1": [],
+  "Unwind@10028242_1": [],
+  "Unwind@1002824d_1": [],
+  "Unwind@10028258_1": [],
+  "Unwind@10028263_1": [],
+  "Unwind@1002826e_1": [],
+  "Unwind@10028279_1": [],
+  "Unwind@10028284_1": [],
+  "Unwind@1002828f_1": [],
+  "Unwind@1002829a_1": [],
+  "Unwind@100282a5_1": [],
+  "Unwind@100282b0_1": [],
+  "Unwind@100282bb_1": [],
+  "Unwind@100282c6_1": [],
+  "Unwind@100282d1_1": [],
+  "Unwind@100282dc_1": [],
+  "Unwind@100282e7_1": [],
+  "Unwind@100282f2_1": [],
+  "Unwind@100282fd_1": [],
+  "Unwind@10028308_1": [],
+  "Unwind@10028313_1": [],
+  "Unwind@1002831e_1": [],
+  "Unwind@10028329_1": [],
+  "Unwind@10028370_1": [],
+  "Unwind@10028378_1": [
+    {
+      "ATT&CK ID": "T1573.001",
+      "Indicator": "Shows ability to use encryption for command and control traffic: The analysis shows use of encryption\n use of http/https that can be used to send encrypted data on command and control server. Matched sigs: Contains XOR operation loops [Stream disassembly]\n Matched sigs: Found potential URL in binary/memory",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for accessing core Windows API functions. It utilizes `CreateFileW` to open a specific file located at a predetermined path, allowing it to read or write data as needed. This file interaction is crucial for the function's objective of data persistence, as it may store configuration or state information.\n\nIn addition to file operations, the function employs `RegSetValueExW` to modify registry keys, specifically targeting a key that could be used for maintaining persistence across system reboots. This interaction with the Windows Registry is significant, as it enables the function to establish itself as a startup application, ensuring it runs automatically when the system starts.\n\nThe control flow of the function is structured with conditionals that check for the existence of certain files or registry entries, determining the subsequent actions to take. This includes loops that may repeatedly check for specific conditions, ensuring that the function can adapt its behavior based on the current state of the system.\n\nThroughout its execution, the function may also generate or modify artifacts, such as creating new files or updating existing ones, which could be used for logging or storing sensitive information. The presence of specific strings related to domains or other identifiers suggests that the function may also be involved in network communications, potentially for data exfiltration or command-and-control purposes.\n\nOverall, the function demonstrates a clear intent to establish persistence, interact with system resources through file and registry manipulations, and adapt its behavior based on the system's state, indicating a sophisticated approach to achieving its objectives.",
+      "Matched Sentence": "The presence of specific strings related to domains or other identifiers suggests that the function may also be involved in network communications, potentially for data exfiltration or command-and-control purposes.",
+      "Similarity": 0.815554
+    }
+  ],
+  "Unwind@10028380_1": [],
+  "Unwind@100283b0_1": [],
+  "Unwind@100283e0_1": [],
+  "Unwind@10028410_1": [],
+  "Unwind@10028440_1": [],
+  "Unwind@100284b0_1": [],
+  "Unwind@100284b8_1": [
+    {
+      "ATT&CK ID": "T1573",
+      "Indicator": "Making HTTPS connections using secure TLS/SSL version: Connection was made using TLSv1.2 [tls.handshake.version: 0x0303]",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for accessing core Windows API functionalities. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely constructed based on certain conditions evaluated earlier in the function, suggesting a tailored approach to file handling.\n\nIn terms of control flow, the function employs a series of conditional checks and loops to determine the existence of specific files or registry keys before proceeding with its operations. This indicates a methodical approach to ensure that the necessary prerequisites are met before executing further actions, which may include writing to the file or modifying system settings.\n\nThe function also interacts with the Windows Registry, using `RegSetValueExW` to create or modify registry keys and values. This interaction is indicative of a persistence mechanism, as it may be setting up configurations that allow it to maintain its presence on the system or influence system behavior upon subsequent executions.\n\nAdditionally, the function appears to handle strings that may represent domain names or other identifiers, which could be related to network communications or data exfiltration efforts. The presence of these strings suggests that the function may be preparing to establish connections or send data to external servers.\n\nOverall, the function exhibits a clear intent to manipulate files and registry settings, potentially for purposes of persistence and data management, while also preparing for possible network interactions. The structured control flow ensures that all necessary conditions are checked before executing critical operations, highlighting a deliberate and strategic approach to its objectives.",
+      "Matched Sentence": "The presence of these strings suggests that the function may be preparing to establish connections or send data to external servers.",
+      "Similarity": 0.78155
+    }
+  ],
+  "Unwind@100284c0_1": [
+    {
+      "ATT&CK ID": "T1134.001",
+      "Indicator": "Contains ability to impersonate access tokens (API string): Found reference to API \"NtOpenProcessToken\" (Indicator: \"OpenProcessToken\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for accessing core Windows API functionalities. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely constructed based on certain conditions evaluated earlier in the function, suggesting a tailored approach to file handling.\n\nOnce the file is successfully opened, the function employs `WriteFile` to write data into the file, which may include configuration settings or other critical information. This action points towards a behavioral objective of persistence, as the function appears to be storing data that could be used in future executions.\n\nIn addition to file operations, the function interacts with the Windows Registry using `RegSetValueExW`. This API call is used to create or modify registry keys and values, further indicating an intent to establish persistence or modify system settings. The specific registry keys targeted by this function are not detailed, but their manipulation suggests an effort to influence system behavior or maintain a foothold on the system.\n\nThe control flow of the function is structured with conditionals that determine the execution path based on the success or failure of previous operations, such as file creation or registry modifications. This indicates a robust error handling mechanism, ensuring that the function can adapt its behavior based on the system's state.\n\nOverall, the function exhibits a clear pattern of file I/O and registry manipulation, with a focus on establishing persistence through the creation of files and modification of registry settings. The use of specific API calls and the structured control flow highlight its intent to interact deeply with the system's resources, potentially for malicious purposes such as maintaining a presence on the system or exfiltrating data.",
+      "Matched Sentence": "The use of specific API calls and the structured control flow highlight its intent to interact deeply with the system's resources, potentially for malicious purposes such as maintaining a presence on the system or exfiltrating data.",
+      "Similarity": 0.799334
+    }
+  ],
+  "Unwind@100284cb_1": [],
+  "Unwind@100284d6_1": [],
+  "Unwind@100284de_1": [],
+  "Unwind@100284e6_1": [],
+  "Unwind@100284f1_1": [],
+  "Unwind@100284fc_1": [],
+  "Unwind@10028507_1": [],
+  "Unwind@10028512_1": [],
+  "Unwind@1002851d_1": [],
+  "Unwind@10028528_1": [],
+  "Unwind@10028533_1": [],
+  "Unwind@1002853e_1": [],
+  "Unwind@10028549_1": [],
+  "Unwind@10028554_1": [],
+  "Unwind@1002855f_1": [],
+  "Unwind@1002856a_1": [],
+  "Unwind@10028575_1": [],
+  "Unwind@10028580_1": [],
+  "Unwind@1002858b_1": [],
+  "Unwind@10028596_1": [],
+  "Unwind@100285a1_1": [],
+  "Unwind@100285ac_1": [],
+  "Unwind@100285b7_1": [],
+  "Unwind@100285c2_1": [],
+  "Unwind@100285cd_1": [],
+  "Unwind@100285db_1": [],
+  "Unwind@100285e6_1": [],
+  "Unwind@100285f1_1": [],
+  "Unwind@100285fc_1": [],
+  "Unwind@10028607_1": [],
+  "Unwind@1002860f_1": [],
+  "Unwind@1002861a_1": [],
+  "Unwind@10028625_1": [],
+  "Unwind@10028630_1": [],
+  "Unwind@1002863b_1": [],
+  "Unwind@10028646_1": [],
+  "Unwind@10028651_1": [],
+  "Unwind@1002865c_1": [],
+  "Unwind@10028667_1": [],
+  "Unwind@100286a0_1": [],
+  "Unwind@100286ab_1": [],
+  "Unwind@100286b6_1": [],
+  "Unwind@100286c1_1": [],
+  "Unwind@100286c9_1": [],
+  "Unwind@100286d1_1": [],
+  "Unwind@100286d9_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to execute an application (API string): Found reference to API \"<HOOK MODULE=\"KERNEL32.DLL\" FUNCTION=\"WinExec\"/>\" (Indicator: \"WinExec\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for various system-level interactions. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely critical for the function's objectives, possibly for logging or data storage purposes. \n\nSubsequently, the function employs `RegSetValueExW` to modify or create a registry key, which suggests an intention to establish persistence or configuration settings within the system. The specific registry key and value being altered are pivotal, as they may influence the behavior of the application or system upon subsequent executions.\n\nThe control flow of the function is structured with conditionals that check for specific states or values, guiding the execution path based on the results of these checks. This indicates a responsive design, where the function adapts its actions based on the current system environment or the results of previous operations.\n\nThroughout its execution, the function may also interact with various strings that represent domains, file names, or other identifiers, which could be indicative of network activity or external communications. The presence of these strings suggests that the function might be involved in data exfiltration or communication with remote servers.\n\nIn summary, the function is designed to manipulate files and registry settings, potentially for persistence or configuration purposes, while also being responsive to the system's state. Its interactions with system components like `kernel32.dll`, file paths, and registry keys highlight its operational objectives, which may include establishing a foothold within the system or facilitating further actions based on the environment.",
+      "Matched Sentence": "Its interactions with system components like `kernel32.dll`, file paths, and registry keys highlight its operational objectives, which may include establishing a foothold within the system or facilitating further actions based on the environment.",
+      "Similarity": 0.838656
+    }
+  ],
+  "Unwind@100286e1_1": [],
+  "Unwind@100286ec_1": [],
+  "Unwind@100286f7_1": [],
+  "Unwind@10028702_1": [],
+  "Unwind@1002870a_1": [],
+  "Unwind@10028712_1": [],
+  "Unwind@1002871a_1": [],
+  "Unwind@10028725_1": [],
+  "Unwind@10028760_1": [],
+  "Unwind@10028768_1": [],
+  "Unwind@10028770_1": [],
+  "Unwind@100287b0_1": [],
+  "Unwind@100287e0_1": [
+    {
+      "ATT&CK ID": "T1543.003",
+      "Indicator": "Contains ability to access device drivers: Found string \":\\WINDOWS\\system32\\DRIVERS\" (Indicator: \"system32\\drivers\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \":\\WINDOWS\\system32\\DriverStore\\FileRepository\" (Indicator: \"system32\\drivers\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")\n Found string \"\\Device\\HarddiskVolume2\\Windows\\SysWOW64\\rundll32.exe\" (Indicator: \"\\Device\\\"; Source: \"00000000-00005780.00000000.174319.005B0000.00000004.mdmp\")",
+      "Comment": "The function initiates its operations by dynamically loading the `kernel32.dll` library, which is essential for accessing core Windows API functionalities. It utilizes the `CreateFileW` API to open or create a file at a specified path, indicating a focus on file manipulation. This file path is likely constructed based on certain conditions evaluated earlier in the function, suggesting a tailored approach to file handling.\n\nIn terms of control flow, the function employs a series of conditional checks and loops to determine the existence of specific files or registry keys before proceeding with its operations. This indicates a methodical approach to ensure that the necessary prerequisites are met before executing further actions, which may include writing data to the file or modifying system settings.\n\nThe function also interacts with the Windows Registry, specifically using `RegSetValueExW` to create or modify registry keys and values. This interaction suggests an objective of persistence, as it may be setting up configurations that allow it to execute on system startup or maintain its presence on the system.\n\nAdditionally, the function appears to handle strings that may represent URLs or file names, which could indicate potential data exfiltration or communication with external servers. The presence of these strings, along with the file and registry manipulations, points to a behavior pattern that aligns with establishing a foothold within the system and possibly facilitating further actions that could compromise system integrity or user data.\n\nOverall, the function exhibits a structured approach to file and registry manipulation, with clear objectives of persistence and potential data handling, leveraging key Windows APIs to achieve its goals.",
+      "Matched Sentence": "The presence of these strings, along with the file and registry manipulations, points to a behavior pattern that aligns with establishing a foothold within the system and possibly facilitating further actions that could compromise system integrity or user data.",
+      "Similarity": 0.801771
+    }
+  ],
+  "Unwind@10028810_1": [],
+  "Unwind@10028818_1": [],
+  "Unwind@10028823_1": [],
+  "Unwind@10028850_1": [
+    {
+      "ATT&CK ID": "T1012",
+      "Indicator": "Queries registry keys: \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"USEFILTER\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"DISABLEHEAPLOOKASIDE\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"FRONTENDHEAPDEBUGOPTIONS\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"SHUTDOWNFLAGS\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"UNLOADEVENTTRACEDEPTH\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"MAXLOADERTHREADS\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"USEIMPERSONATEDDEVICEMAP\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"TRACINGFLAGS\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"CFGOPTIONS\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"MINIMUMSTACKCOMMITINBYTES\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"BREAKONINITIALIZEPROCESSFAILURE\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"KEEPACTIVATIONCONTEXTSALIVE\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"TRACKACTIVATIONCONTEXTRELEASES\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"MAXDEADACTIVATIONCONTEXTS\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"GLOBALFLAG\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"CWDILLEGALINDLLSEARCH\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SYSTEM\\CONTROLSET001\\CONTROL\\SESSION MANAGER\"; Key: \"RESOURCEPOLICIES\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\IMAGE FILE EXECUTION OPTIONS\\RUNDLL32.EXE\"; Key: \"DEBUGPROCESSHEAPONLY\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WOW64\\X86\"; Key: \"RUNDLL32.EXE\"; Value: \"\")\n \"rundll32.exe\" (Access type: \"QUERYVAL\"; Path: \"HKLM\\SOFTWARE\\MICROSOFT\\WOW64\\X86\"; Key: \"\"; Value: \"\")",
+      "Comment": "The function initiates its operations by utilizing the `CreateFileW` API to open a specific file, which is crucial for its subsequent actions. This file is likely a configuration or data file, as the function appears to read from it to gather necessary parameters. Following the file access, the function employs `ReadFile` to extract data, which it processes to determine further actions.\n\nIn terms of system interactions, the function also makes use of `RegOpenKeyExW` and `RegQueryValueExW` to access specific registry keys. This indicates that it retrieves configuration settings or other critical information stored in the Windows registry, which may influence its behavior or the data it processes.\n\nThe control flow of the function is structured with conditionals that check the validity of the data read from the file and registry. If certain conditions are met, the function may proceed to modify the file or registry entries, suggesting a potential objective of persistence or configuration adjustment. Additionally, loops are employed to iterate through data, ensuring that all relevant information is processed before concluding its operations.\n\nOverall, the function exhibits a behavior pattern focused on data retrieval and system configuration, leveraging file and registry interactions to achieve its objectives. It demonstrates a clear intent to manipulate system settings, which could be indicative of persistence mechanisms or adjustments to the operational environment.",
+      "Matched Sentence": "In terms of system interactions, the function also makes use of `RegOpenKeyExW` and `RegQueryValueExW` to access specific registry keys.",
+      "Similarity": 0.835636
+    }
+  ],
+  "Unwind@10028858_1": [],
+  "Unwind@10028863_1": [],
+  "Unwind@10028890_1": [],
+  "Unwind@10028898_1": [],
+  "Unwind@100288c0_1": [],
+  "Unwind@100288c8_1": [],
+  "Unwind@100288f0_1": [],
+  "Unwind@100288f8_1": [],
+  "Unwind@10028920_1": [],
+  "Unwind@10028950_1": [],
+  "Unwind@10028958_1": [],
+  "Unwind@10028980_1": [],
+  "Unwind@100289b0_1": [],
+  "Unwind@100289e0_1": [],
+  "Unwind@10028a10_1": [],
+  "Unwind@10028a40_1": [],
+  "Unwind@10028a70_1": [],
+  "Unwind@10028aa0_1": [],
+  "Unwind@10028ad0_1": [],
+  "Unwind@10028b00_1": [],
+  "Unwind@10028b08_1": [],
+  "Unwind@10028b13_1": [],
+  "Unwind@10028b1e_1": [],
+  "Unwind@10028b50_1": [],
+  "Unwind@10028b58_1": [],
+  "Unwind@10028b63_1": [],
+  "Unwind@10028b6e_1": [],
+  "Unwind@10028ba0_1": [],
+  "Unwind@10028bd0_1": [],
+  "Unwind@10028c00_1": [],
+  "Unwind@10028c08_1": [],
+  "Unwind@10028c30_1": [],
+  "Unwind@10028c38_1": [],
+  "Unwind@10028c60_1": [],
+  "Unwind@10028c68_1": [],
+  "Unwind@10028c90_1": [],
+  "Unwind@10028cc0_1": [],
+  "Unwind@10028cf0_1": [],
+  "Unwind@10028d20_1": [],
+  "Unwind@10028d50_1": [],
+  "Unwind@10028d80_1": [],
+  "Unwind@10028db0_1": [],
+  "Unwind@10028dbb_1": [
+    {
+      "ATT&CK ID": "T1622",
+      "Indicator": "Contains ability to register a top-level exception handler (often used as anti-debugging trick): SetUnhandledExceptionFilter@KERNEL32.dll at 16111-713-10014AC0",
+      "Comment": "The function initiates its operations by invoking the `CreateFileW` API to open a specific file, which is determined by a hardcoded file path. This file is likely used for logging or configuration purposes, as the function subsequently checks for its existence and reads its contents. If the file is not found, the function creates it, indicating a behavior aimed at persistence or data storage.\n\nFollowing the file operations, the function utilizes `RegOpenKeyExW` and `RegSetValueExW` to interact with the Windows Registry. It specifically targets a registry key associated with application settings, where it writes a value that may be used for configuration or to maintain persistence across system reboots. This interaction suggests an intention to modify system behavior or retain access to the application.\n\nThe control flow of the function is structured with conditionals that dictate the execution path based on the success or failure of the file and registry operations. It employs loops to repeatedly check for certain conditions, ensuring that the necessary resources are available before proceeding. This indicates a robust error-handling mechanism designed to ensure that the function can adapt to various system states.\n\nOverall, the function exhibits behaviors typical of applications that seek to establish persistence and modify system settings, leveraging file I/O and registry manipulation to achieve its objectives. The use of specific API calls and the structured control flow highlight its methodical approach to interacting with the system environment.",
+      "Matched Sentence": "This indicates a robust error-handling mechanism designed to ensure that the function can adapt to various system states.",
+      "Similarity": 0.794567
+    }
+  ],
+  "Unwind@10028dc6_1": [],
+  "Unwind@10028dd1_1": [
+    {
+      "ATT&CK ID": "T1106",
+      "Indicator": "Contains ability to retrieve the fully qualified path of module (API string): Found reference to API \"GetModuleFileNameA\" (Indicator: \"GetModuleFileName\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetModuleFileNameW\" (Indicator: \"GetModuleFileName\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")\n Found reference to API \"GetModuleFileNameA\" (Indicator: \"GetModuleFileName\"; Source: \"00000000-00005780.00000000.174319.008B9000.00000002.mdmp\")",
+      "Comment": "The function performs a series of operations that primarily focus on interacting with the system's file and registry components. It begins by utilizing the `CreateFileW` API to open or create a file at a specified path, which is crucial for its intended data manipulation. This file path is likely hardcoded or derived from user input, indicating the function's reliance on specific data storage locations.\n\nOnce the file is successfully accessed, the function employs `WriteFile` to write data into the opened file, suggesting a behavior aimed at data persistence or logging. This action is indicative of a broader objective to maintain a record of certain operations or configurations, potentially for later retrieval or analysis.\n\nIn addition to file operations, the function interacts with the Windows registry using `RegSetValueExW`. This API call is used to create or modify registry keys and values, which can be essential for establishing persistence mechanisms or altering system configurations. The specific registry keys targeted by this function may relate to application settings or system behaviors, further emphasizing its role in modifying the environment in which it operates.\n\nThe control flow of the function is structured with conditionals that determine the success of file and registry operations, allowing it to handle errors gracefully and ensure that the intended actions are completed. This structured approach indicates a methodical design aimed at achieving reliable interactions with system resources.\n\nOverall, the function exhibits a clear intent to manipulate both file and registry components, suggesting objectives related to data persistence and system configuration changes. The combination of file writing and registry modification points to a potential use case in application setup or maintenance, where the function ensures that necessary data is stored and system settings are adjusted accordingly.",
+      "Matched Sentence": "This file path is likely hardcoded or derived from user input, indicating the function's reliance on specific data storage locations.",
+      "Similarity": 0.791761
+    }
+  ],
+  "Unwind@10028ddc_1": [],
+  "Unwind@10028de7_1": [],
+  "Unwind@10028e10_1": [],
+  "Unwind@10028e40_1": [],
+  "Unwind@10028e48_1": [],
+  "Unwind@10028e70_1": [],
+  "Unwind@10028ea0_1": [],
+  "Unwind@10028ea8_1": [],
+  "Unwind@10028eb0_1": [],
+  "Unwind@10028ed9_1": [],
+  "Unwind@10028efc_1": [],
+  "Unwind@10028f1f_1": [
+    {
+      "ATT&CK ID": "T1010",
+      "Indicator": "Contains ability to retrieve open application windows (API string): Found reference to API \"GetActiveWindow\" (Indicator: \"GetActiveWindow\"; File: \"aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47\")",
+      "Comment": "The function initiates its operations by utilizing the `CreateFileW` API to open a specific file, indicated by a hardcoded file path. This file is likely used for logging or configuration purposes, as the function subsequently checks for its existence and reads its contents. If the file is not found, the function creates it, indicating a behavior aimed at persistence or data storage.\n\nFollowing the file operations, the function employs `RegOpenKeyExW` and `RegSetValueExW` to interact with the Windows Registry. It specifically targets a registry key associated with application settings, where it writes a value that may be used for configuration or to maintain state across sessions. This interaction suggests an intention to modify system behavior or retain user preferences.\n\nThe control flow of the function is structured with conditionals that dictate the execution path based on the success or failure of the file and registry operations. It includes loops that may repeatedly check for certain conditions, ensuring that the necessary resources are available before proceeding. This indicates a robust error-handling mechanism designed to ensure the function's objectives are met reliably.\n\nOverall, the function exhibits behaviors consistent with persistence and configuration management, leveraging file I/O and registry modifications to achieve its goals. The use of specific API calls and system components highlights its interaction with the underlying Windows operating system, emphasizing its role in maintaining application state and user settings.",
+      "Matched Sentence": "The use of specific API calls and system components highlights its interaction with the underlying Windows operating system, emphasizing its role in maintaining application state and user settings.",
+      "Similarity": 0.825831
+    }
+  ],
+  "Unwind@10028f27_1": [],
+  "Unwind@10028f4d_1": [],
+  "Unwind@10028f55_1": [],
+  "Unwind@10028f7a_1": [],
+  "Unwind@10028f9d_1": [],
+  "FUN_100290c0_1": [],
+  "FUN_100290f0_1": [],
+  "FUN_100290fa_1": [],
+  "FUN_10029104_1": [],
+  "FUN_1002910e_1": [],
+  "FUN_10029118_1": []
+}

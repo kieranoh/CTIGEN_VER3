@@ -3,8 +3,8 @@ import os
 from typing import Dict, Any, Tuple, List
 
 
-INPUT_DIR = r"mapping_py_result\w_DeGPT\wo_filter\wo_top"           # 원본 JSON 들이 있는 디렉터리
-OUTPUT_DIR_BASE = r"mapping_py_result\w_DeGPT\wo_filter\top_"  # 결과를 저장할 디렉터리 prefix (뒤에 TOP_K 붙음)
+INPUT_DIR = r"mapping_py_result\wo_DeGPT\palmtree\wo_top"           # 원본 JSON 들이 있는 디렉터리
+OUTPUT_DIR_BASE = r"mapping_py_result\wo_DeGPT\palmtree\top_"  # 결과를 저장할 디렉터리 prefix (뒤에 TOP_K 붙음)
 TOP_K = 1                       # 여기만 1 / 3 / 5 등으로 바꿔서 사용하세요
 
 
