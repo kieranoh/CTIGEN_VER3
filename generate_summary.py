@@ -109,8 +109,8 @@ exp_settings = {
 def make_path(base_path: str, use_degpt: bool, use_top1: bool) -> str:
     """기존 경로(wo_DeGPT + top_1 기준)를 네 가지 설정에 맞게 바꿔주는 함수"""
     path = base_path
-    path = path.replace("wo_DeGPT", "w_DeGPT" if use_degpt else "wo_DeGPT")
-    path = path.replace("top_1", "top_1" if use_top1 else "wo_top")
+    path = path.replace("w_DeGPT", "w_DeGPT" if use_degpt else "wo_DeGPT")
+    path = path.replace("wo_top", "top_1" if use_top1 else "wo_top")
     return path
 
 rows = []  # CSV로 만들 기록들
