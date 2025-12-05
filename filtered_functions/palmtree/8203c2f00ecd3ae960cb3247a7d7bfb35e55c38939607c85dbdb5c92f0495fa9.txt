@@ -19,3 +19,11 @@ __allshl
 __aullshr
 ___raise_securityfailure
 ___report_gsfailure
+CreateToolhelp32Snapshot
+Process32FirstW
+Process32NextW
+RmStartSession
+RmEndSession
+RmRegisterResources
+RmGetList
+_guard_check_icall

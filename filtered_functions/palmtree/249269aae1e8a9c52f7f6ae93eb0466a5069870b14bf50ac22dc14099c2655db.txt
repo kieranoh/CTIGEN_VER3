@@ -15,3 +15,16 @@ entry
 FUN_00403790
 FUN_004037b2
 FUN_004037ca
+CWinApp
+operator_delete
+AfxEnableControlContainer
+CDialog
+DDX_Control
+CString
+CWnd
+GetWindowTextA
+SetWindowTextA
+Format
+__dllonexit
+_initterm
+FUN_004037a5

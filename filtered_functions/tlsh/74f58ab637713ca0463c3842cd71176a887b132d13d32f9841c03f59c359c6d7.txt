@@ -1,1 +1,14 @@
-fun_1
+Send
+get_Address
+set_Address
+get_BtcAddress
+get_Amount
+get_MasterKey
+set_Archive
+set_EncryptedDump
+get_Data
+set_Data
+get_InstalledApps
+get_RememberPassword
+get_Balance
+get_Cookie
