@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+
 #------ Function precision / recall to CSV ------#
 thresholds = [i / 100 for i in range(80, 81)]
 
@@ -12,91 +13,98 @@ malware_to_hash = {
     "IISerpent" : "aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47",
     "RaccoonStealer" : "0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909",
     "new_sample" : "1bc5621a4818f2124ac085da21f607ca"
-
 }
+
+# ================== 환경 스위치 ==================
+ENV = "s" 
+PREFIX = {
+    "s":   r"C:\Users\swoo7246\Downloads\CTIGEN_ver3",
+    "j": r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3"
+}[ENV]
 
 
 test_code = {
 "BPFDoor" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
-    },
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\afa8a32ec29a31f152ba20a30eb483520fe50f2dce6c9aa9135d88f7c9c511d7.json",
+},
 
 "AbbadonRAT" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
-    },
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\74f58ab637713ca0463c3842cd71176a887b132d13d32f9841c03f59c359c6d7.json",
+},
 
 "Babuk" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
-    },
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9.json",
+},
 
 "Emotet" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
-  } ,
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\76816ba1a506eba7151bce38b3e6d673362355063c8fd92444b6bec5ad106c21.json",
+},
 
-"Emotet2" : {      
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
- },
+"Emotet2" : {
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\249269aae1e8a9c52f7f6ae93eb0466a5069870b14bf50ac22dc14099c2655db.json",
+},
 
 "IISerpent" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
-  },
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\aa34ecb2922ce8a8066358a1d0ce0ff632297037f8b528e3a37cd53477877e47.json",
+},
 
 "RaccoonStealer" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
-  },
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909.json",
+},
 
 "new_sample" : {
-    "baseline" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\wo_filter\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
-    "palmtree" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
-    "ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
-    "tlsh" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
-    "palmtree_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
-    "tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
-    "palmtree_tlsh_ssdeep" :  r"C:\Users\kiera\Desktop\workspace\65_CTIGEN_ver3\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
- }
+    "baseline" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\wo_filter\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
+    "palmtree" :  rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
+    "ssdeep" :    rf"{PREFIX}\mapping_py_result\w_DeGPT\ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
+    "tlsh" :      rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
+    "palmtree_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
+    "tlsh_ssdeep" :     rf"{PREFIX}\mapping_py_result\w_DeGPT\tlsh_ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
+    "palmtree_tlsh_ssdeep" : rf"{PREFIX}\mapping_py_result\w_DeGPT\palmtree_tlsh_ssdeep\wo_top\1bc5621a4818f2124ac085da21f607ca.json",
 }
+}
+
 
 # 네 가지 실험 설정 정의
 exp_settings = {

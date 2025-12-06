@@ -7,7 +7,7 @@ from pathlib import Path
 # =========================================
 
 
-target = ["palmtree","ssdeep"]   # ← 여기만 바꿔서 사용하시면 됩니다.
+target = ["ssdeep"]   # ← 여기만 바꿔서 사용하시면 됩니다.
 
 # 2) 알고리즘별 TXT 디렉터리 (디렉터리까지만 하드코딩)
 #    각 디렉터리 안에 hash.txt 파일들이 있다고 가정:
@@ -25,7 +25,7 @@ TXT_DIRS = {
 BASELINE_DIR = Path("mapping_py_result/baseline")
 
 # 4) 필터링 결과를 저장할 디렉터리
-OUT_DIR = Path("mapping_py_result/wo_DeGPT/palmtree_ssdeep/wo_top")
+OUT_DIR = Path("mapping_py_result/wo_DeGPT/ssdeep/wo_top")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
