@@ -1,11 +1,22 @@
 {
     "FUN_140004150": [
-       "dummy"
+        "The malware uses an XOR-based routine to decode hard-coded strings before use and re-encodes them afterward to hinder static analysis."
     ],
+
     "FUN_140002d20": [
-        "dummy"
+        "It drops two certificate files with random names and a .crt extension into the %TEMP% directory.",
+        "It uses certutil.exe to import the dropped certificate files into the local Root and CA certificate stores."
     ],
+
     "FUN_140004720": [
-        "dummy"
+        "It creates a new local user account named \"UpdatusUser\" with the password \"admQ!23\" on the compromised system.",
+        "It adds the UpdatusUser account to the BUILTIN\\Administrators group to grant the attacker full administrative privileges."
+    ],
+
+    "FUN_140003d40": [
+        "It locates the Firefox installation directory by enumerating the file system for the Firefox browser path.",
+        "It ensures the Firefox defaults/pref directory structure exists by creating any missing subdirectories under the installation path.",
+        "It creates the wincerts.js file under the Firefox defaults/pref directory and prepares it for writing configuration data.",
+        "It writes a preference line that enables Firefox to trust Windows system root certificates, thereby trusting the malicious root certificate that was installed."
     ]
 }
