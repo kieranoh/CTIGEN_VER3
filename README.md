@@ -58,7 +58,7 @@ python run_extract_pe.py
 python o_extract_embadding_palmtree --repo_dir path/to/repo --model_path path/to/model --vocab_path path/to/vocab --inp_dir benign/asm --out_jsonlpath/to/benign/emb.jsonl
 python anomdb_s.py ingest --inp_dir path/to/emb/dir --db path/to/db
 ```
-### 1.4 installDeGPT
+### 1.4 install DeGPT
 degpt_function.py
 
 - https://github.com/PeiweiHu/DeGPT clone the repository and satisfy requirement in the repository.
