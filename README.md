@@ -176,3 +176,65 @@ filtering.py
 python filtering.py anomb_result.jsonl preprocessed_file.json remove_benign.json 
 ```
 
+### Hash-based Filtering Scripts
+
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `build_tlsh_db.py` | Preprocessed benign JSONL | `example_tlsh.json` | Create TLSH DB from benign functions |
+| `build_ssdeep_db.py` | Preprocessed benign JSONL | `example_ssdeep.json` | Create SSDEEP DB using pydeep |
+| `diff_calculate_tlsh.py` | Target malware JSONL | `example_diff_tlsh/*.jsonl` | Compute TLSH min-distance for each target function |
+| `diff_calculate_ssdeep.py` | Target malware JSONL | `example_diff_ssdeep/*.jsonl` | Compute minimum SSDEEP fuzzy distance (min_diff = 100 - similarity)|
+| `filter_hash.py` | Preprocessed + diff results | `*_filtered.jsonl` | Remove functions below threshold (example: TLSH<30, SSDEEP<48) |
+
+
+#### (Optional) Hash-based Benign Filtering
+
+You may remove benign-like functions using fuzzy hashing
+(TLSH or SSDEEP) instead of AnoMDB embedding-based filtering.
+
+This step **must be executed after**:
+
+```
+3️. preprocess_code.py
+```
+
+and **before**:
+
+```
+9️. degpt_function.py
+```
+
+---
+
+##### 1️. Build hash DB from benign dataset
+
+```bash
+# Choose one depending on preferred hash algorithm
+# When generating a TLSH/SSDEEP benign hash DB,the benign dataset must first be preprocessed using preprocess_code.py.
+# Then set that preprocessed benign JSONL directory inside BASE_DIR variable of below scripts.
+python build_tlsh_db.py         # TLSH
+python build_ssdeep_db.py       # SSDEEP
+```
+
+##### 2️. Compare preprocessed malware functions vs benign DB
+
+```bash
+# This step generates `*_diff/*.jsonl` files with `min_diff` values
+python diff_calculate_tlsh.py    # TLSH distance
+python diff_calculate_ssdeep.py  # SSDEEP distance
+```
+
+##### 3️. Remove benign-like functions
+
+```bash
+# Produces `_filtered.jsonl` in output directory
+python filter_hash.py
+```
+
+---
+
+After filtering is finished, **continue pipeline from Step 9**:
+
+```bash
+python degpt_function.py
+```
